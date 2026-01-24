@@ -19,8 +19,8 @@ install.packages("devtools")
 
 # Install the BrAPI package from GitHub
 library(devtools)
-install_github("TriticeaeToolbox/BrAPI.R")
-library(BrAPI)
+install_github("davenet/brapi-r6")
+library(BrAPI-R6)
 ```
 
 # Documentation

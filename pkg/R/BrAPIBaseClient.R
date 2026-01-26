@@ -14,7 +14,7 @@ BaseBrAPIClient <- R6Class(
     #' Creates a new instance of this [R6][R6::R6Class] class.
     #' It is not recommended that this object is created separately from the getBrAPI function
     #' @param server The BraPI server URL to be used
-    #' @param authentication The authentication provider function string to be used if the server requires authentication
+    #' @param authentication The authentication can either by a Bearer token or an authentication provider function
     #' @param verbosity The verbosity level to be used. See verbosity in httr2 package for details
     #'
     initialize = function(server = NULL,
@@ -35,6 +35,7 @@ BaseBrAPIClient <- R6Class(
       private$.verbosity <- verbosity
       private$.authentication <- authentication
       private$.server <- server
+      private$validate_server()
     },
     perform_get_request = function(endpoint = NULL, queryParams = list(), page = NULL, pageSize = NULL) {
       
@@ -72,6 +73,46 @@ BaseBrAPIClient <- R6Class(
           httr2::req_perform(verbosity = private$.verbosity) |>
           httr2::resp_body_json(simplifyVector = TRUE)
       }
+    },
+    perform_post_request = function(endpoint = NULL, queryParams = list(), page = NULL, pageSize = NULL) {
+      
+      if (!is.null(page)) {
+        queryParams$page <- page
+      }
+      
+      if (!is.null(pageSize)) {
+        queryParams$pageSize <- pageSize
+      }
+      
+      if (private$.verbosity > 0) {
+        print("Query Params:")
+        print(queryParams)
+      }
+      
+      req <- private$create_request(endpoint, method = 'POST')
+      
+      req <- req |>
+        req_headers("Content-Type" = "application/json")
+      
+      # For JSON body
+      req <- req |>
+        req_body_json(queryParams)
+      
+      if (private$.verbosity > 0) {
+        print(req)
+      }
+      
+      if (private$.verbosity > 0) {
+        print(req)
+      }
+      
+      if (isTRUE(private$.dry_run)) {
+        req |> httr2::req_dry_run()
+      } else {
+        req |>
+          httr2::req_perform(verbosity = private$.verbosity) |>
+          httr2::resp_body_json(simplifyVector = TRUE)
+      }
     }
   ),
   active = list(
@@ -85,7 +126,24 @@ BaseBrAPIClient <- R6Class(
           if (private$.verbosity > 0) {
             message(paste0("Changing server to ", value))
           }
-          private$.server <- private$validate_server(value)
+          private$.server <- value
+          private$validate_server()
+        }
+        return(self)
+      }
+    },
+    #' @field server
+    #' Sets the authentication, which can either by a Bearer token or a authentication provider function
+    authentication = function(value) {
+      if (missing(value)) {
+        stop("Authentication is private, you can set it but not see it ;)")
+      } else {
+        if (is.null(private$.server) || private$.server != value) {
+          if (private$.verbosity > 0) {
+            message("Changing authentication")
+          }
+          private$.authentication <- authentication
+          private$validate_server()
         }
         return(self)
       }
@@ -98,13 +156,34 @@ BaseBrAPIClient <- R6Class(
         return(private$.dry_run)
       } else {
         if (is.null(private$.dry_run) || private$.dry_run != value) {
-          if (private$.verbosity > 0) {
-            message(paste0("Changing dry_run to ", value))
-          }
           if (!is.logical(value)) {
             stop("dry_run must be TRUE or FALSE")
           }
+          
+          if (private$.verbosity > 0) {
+            message(paste0("Changing dry_run to ", value))
+          }
           private$.dry_run <- value
+        }
+        return(self)
+      }
+    },
+    #' @field verbosity
+    #' Get or sets the verbosity level to be used. See verbosity in httr2 package for details
+    #' In the case of setting it returns the BrAPIClient to allow for chaining.
+    verbosity = function(value) {
+      if (missing(value)) {
+        return(private$.verbosity)
+      } else {
+        if (is.null(private$.verbosity) || private$.verbosity != value) {
+          if (!is.numeric(value)) {
+            stop("value must be numerical")
+          }
+          
+          if (private$.verbosity > 0 || value > 0) {
+            message(paste0("Changing verbosity to ", value))
+          }
+          private$.max_tries <- value
         }
         return(self)
       }
@@ -117,11 +196,12 @@ BaseBrAPIClient <- R6Class(
         return(private$.max_tries)
       } else {
         if (is.null(private$.max_tries) || private$.max_tries != value) {
-          if (private$.verbosity > 0) {
-            message(paste0("Changing max_tries to ", value))
-          }
           if (!is.numeric(value)) {
             stop("max_tries must be numerical")
+          }
+          
+          if (private$.verbosity > 0) {
+            message(paste0("Changing max_tries to ", value))
           }
           private$.max_tries <- value
         }
@@ -129,7 +209,9 @@ BaseBrAPIClient <- R6Class(
       }
     },
     #' @field multi
-    #' Controls what happens when a value is a vector.
+    #' Controls what happens when a query argument value is a vector. If null it passes the 
+    #' query argument value as a concatenated string. Eg. c('example1', 'example1') will
+    #' be converted to ['example1', 'example1']
     #' see .multi in https://httr2.r-lib.org/reference/req_url.html'
     #' In the case of setting it returns the BrAPIClient to allow for chaining.
     multi = function(value) {
@@ -137,11 +219,12 @@ BaseBrAPIClient <- R6Class(
         return(private$.multi)
       } else {
         if (is.null(private$.multi) || private$.multi != value) {
-          if (private$.verbosity > 0) {
-            message(paste0("Changing multi to ", value))
-          }
           if (!is.character(value)) {
             stop("multi must be character")
+          }
+          
+          if (private$.verbosity > 0) {
+            message(paste0("Changing multi to ", value))
           }
           private$.multi <- value
         }
@@ -152,7 +235,7 @@ BaseBrAPIClient <- R6Class(
   private = list(
     .server = NULL,
     .authentication = NULL,
-    .dry_run = TRUE,
+    .dry_run = FALSE,
     .max_tries = 1,
     .multi = NULL,
     .verbosity = 0,
@@ -171,7 +254,17 @@ BaseBrAPIClient <- R6Class(
       return(username)
     },
     validate_server = function() {
-      perform_request(self, 'serverinfo')
+      response <- self$perform_get_request('serverinfo')
+      
+      if (!is.null(response$metadata$status$code) && response$metadata$status$code == 200) {
+        if (private$.verbosity > 0) {
+          print (response$metadata$status)
+        }
+        print ("Server is valid")
+      } else {
+        print ("Server could not be validated with call to /serverinfo due to:")
+        print (response$metadata$status)
+      }
     },
     create_request = function(endpoint = NULL, method = NULL) {
       

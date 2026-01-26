@@ -24,3 +24,11 @@ getBrAPI <- function(server = NULL,
   client <- BrAPIClient$new(server, authentication, verbosity)
 }
 
+to_list <- function(x) {
+  if (!is.list(x)) {
+    list(x)
+  } else {
+    x
+  }
+}
+

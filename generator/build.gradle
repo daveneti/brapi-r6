@@ -13,14 +13,15 @@ dependencies {
   implementation "org.brapi.brapi-schema-tools:brapi-schema-tools-cli:$brapiSchemaToolsVersion"
 }
 
-tasks.register("generateSQL", JavaExec) {
+tasks.register("generateR", JavaExec) {
   group = 'BrAPI'
   description = 'Generate R files from the JSON Schema'
   classpath = sourceSets.main.runtimeClasspath
   mainClass = javaMainClass
   workingDir = '../'
+  def specificationDirectory = 'Specification/BrAPI-Schema'
   def filename = "pkg/R"
-  args = ['generate', 'Specification/BrAPI-Schema',
+  args = ['generate', specificationDirectory,
           '-l', 'R',
           '-f', filename,
           '-o', 'generator/r-options.yaml',

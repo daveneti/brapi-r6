@@ -1,3 +1,3 @@
 test_that("getBrAPI works", {
-  getBrAPI()
+  brapi <- getBrAPI()
 })

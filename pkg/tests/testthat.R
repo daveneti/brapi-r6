@@ -7,6 +7,6 @@
 # * https://testthat.r-lib.org/articles/special-files.html
 
 library(testthat)
-library(brapi-r6)
+library(BrAPI.R6)
 
-test_check("brapi-r6")
+test_check("BrAPI.R6")

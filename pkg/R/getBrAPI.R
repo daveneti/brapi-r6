@@ -2,43 +2,25 @@
 #'
 #' @param server The BraPI server URL to be used
 #' @param authentication The authentication string to be used if the server requires authentication
-#' @param verbose Set to TRUE to provide more verbose information what is happening
+#' @param verbosity Set verbosity level for httr2 requests. 0 = none, 1 = basic, 2 = headers, 3 = body. Aslo controls
+#'   verbosity of messages from this client. Defaults to 0.
 #' @return A configured BrAPIClient R6 Class object.
 #' @examples
 #' getBrAPI("www.brapiserver.com")
-#' @import R6usethis::use_test("name")
+#' @import R6
 #' @import httr2
 #' @importFrom glue glue
 #' @export
 getBrAPI <- function(server = NULL,
                      authentication = NULL,
-                     verbose = FALSE) {
-  client <- BrAPIClient$new(server, authentication, verbose)
+                     verbosity = 0) {
+  client <- BrAPIClient$new(server, authentication, verbosity)
 }
 
-create_request <- function(client, endpoint = NULL, method = NULL) {
-  create_request(client, endpoint) %>%
-    httr2::req_verbose() %>%
-    httr2::req_perform() %>%
-    httr2::resp_body_json(simplifyVector = TRUE)
+
+getBrAPI <- function(server = NULL,
+                     authentication = NULL,
+                     verbosity = 0) {
+  client <- BrAPIClient$new(server, authentication, verbosity)
 }
 
-create_request <- function(client, endpoint = NULL, method = NULL) {
-  req <- httr2::request(client$server)
-
-  if (!is.null(endpoint)) {
-    req |> httr2::req_url_path(path = endpoint)
-  }
-
-  if (!is.null(method)) {
-    req |> httr2::req_method(method)
-  }
-  
-  if (client$max_tries > 1) {
-    req |> httr2::req_retry(max_tries = 5)
-  }
-  
-  if (client$dry_run > 1) {
-    req |> httr2::req_dry_run(client$dry_run)
-  }
-}

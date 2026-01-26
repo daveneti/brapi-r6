@@ -8,7 +8,6 @@ Description: An R6 Class Library for BrAPI
 License: file LICENSE.md
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
-Collate: generated/*.R
 Imports:
     R6,
     dplyr,

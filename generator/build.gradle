@@ -19,7 +19,7 @@ tasks.register("generateR", JavaExec) {
   classpath = sourceSets.main.runtimeClasspath
   mainClass = javaMainClass
   workingDir = '../'
-  def specificationDirectory = 'Specification/BrAPI-Schema'
+  def specificationDirectory = '../BrAPI/Specification/BrAPI-Schema'
   def filename = "pkg/R"
   args = ['generate', specificationDirectory,
           '-l', 'R',

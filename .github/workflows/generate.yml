@@ -49,6 +49,12 @@ jobs:
         with:
           fetch-depth: 0
           ssh-key: ${{ secrets.DEPLOY_KEY }}
+          path: main
+      - name: Checkout BrAPI repo to temp directory
+        uses: actions/checkout@v4
+        with:
+          repository: plantbreeding/BrAPI
+          path: BrAPI
       - name: Change wrapper permissions
         working-directory: ./generator
         run: chmod +x ./gradlew
@@ -57,3 +63,7 @@ jobs:
         run: ./gradlew generate
       - if: needs.check.outputs.skip_commit == 'false'
         uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          repository: main
+          commit_message: Apply automatic changes
+          file_pattern: main/**

@@ -30,10 +30,3 @@ tasks.register("generateR", JavaExec) {
           '-r',
           '-t']
 }
-
-tasks.register("generateAll") {
-  dependsOn generateGraphQL
-  dependsOn generateOpenAPI
-  dependsOn generateOWL
-  dependsOn generateSQL
-}

@@ -60,7 +60,7 @@ jobs:
         run: chmod +x ./gradlew
       - name: Generate R Code
         working-directory: ./main/generator
-        run: ./gradlew generate
+        run: ./gradlew generateR
       - if: needs.check.outputs.skip_commit == 'false'
         uses: stefanzweifel/git-auto-commit-action@v5
         with:

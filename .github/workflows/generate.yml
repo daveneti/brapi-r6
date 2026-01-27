@@ -56,11 +56,11 @@ jobs:
           repository: plantbreeding/BrAPI
           path: BrAPI
       - name: Change wrapper permissions
-        working-directory: ./generator
+        working-directory: ./main/generator
         run: chmod +x ./gradlew
       - name: Generate R Code
-        working-directory: ./generator
-        run: ./gradlew generate
+        working-directory: ./main/generator
+        run: ./gradlew generateR
       - if: needs.check.outputs.skip_commit == 'false'
         uses: stefanzweifel/git-auto-commit-action@v5
         with:

@@ -10,7 +10,7 @@ Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 Imports:
     R6,
-    dplyr,
+    tidyr,
     httr2,
     jsonlite,
     glue

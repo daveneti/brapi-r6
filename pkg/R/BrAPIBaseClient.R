@@ -14,13 +14,24 @@ BaseBrAPIClient <- R6Class(
     #' Creates a new instance of this [R6][R6::R6Class] class.
     #' It is not recommended that this object is created separately from the getBrAPI function
     #' @param server The BraPI server URL to be used
+    #' @param format The format of the response, either 'list', 'json', 'string' or 'raw'
     #' @param authentication The authentication can either by a Bearer token or an authentication provider function
+    #' @param dry_run If TRUE the client will perform a dry run and not actually perform the requests, useful for debugging
     #' @param verbosity The verbosity level to be used. See verbosity in httr2 package for details
     #'
     initialize = function(server = NULL,
+                          format = 'list',
                           authentication = NULL,
+                          dry_run = FALSE,
                           verbosity = 0) {
       if (!is.numeric(verbosity)) {
+
+        formats <- c( 'list', 'json', 'string', 'raw')
+
+        if (!(format %in% formats)) {
+          stop (glue::glue("format '{format}' is not supported. Supported formats are: {paste(formats, collapse=', ')}"))
+        }
+
         verbosity <- 0
       }
       
@@ -31,14 +42,22 @@ BaseBrAPIClient <- R6Class(
       if (verbosity > 3) {
         verbosity <- 3
       }
-      
-      private$.verbosity <- verbosity
-      private$.authentication <- authentication
+
       private$.server <- server
+      private$.format <- format
+      private$.authentication <- authentication
+      private$.verbosity <- verbosity
+      private$.dry_run <- dry_run
       private$validate_server()
     },
+    #' @description
+    #' Performs a GET request to the BraPI server
+    #' @param endpoint The BraPI endpoint to be called
+    #' @param queryParams The query parameters to be used
+    #' @param page The page number of results to return, starting from 0
+    #' @param pageSize The maximum number of results to return per page
+    #' @return The response from the BraPI server
     perform_get_request = function(endpoint = NULL, queryParams = list(), page = NULL, pageSize = NULL) {
-      
       if (!is.null(page)) {
         queryParams$page <- page
       }
@@ -46,13 +65,13 @@ BaseBrAPIClient <- R6Class(
       if (!is.null(pageSize)) {
         queryParams$pageSize <- pageSize
       }
-      
+
       if (private$.verbosity > 0) {
-        print("Query Params:")
+        message("Query Params:")
         print(queryParams)
       }
-      
-      req <- private$create_request(endpoint)
+
+      req <- private$create_request(endpoint, verbosity = private$.verbosity)
       
       if (!is.null(private$.multi)) {
         req <- req |>
@@ -61,19 +80,21 @@ BaseBrAPIClient <- R6Class(
         req <- req |>
           req_url_query(!!!queryParams)
       }
-      
+
       if (private$.verbosity > 0) {
+        message("Sending Request:")
         print(req)
       }
-      
-      if (isTRUE(private$.dry_run)) {
-        req |> httr2::req_dry_run()
-      } else {
-        req |>
-          httr2::req_perform(verbosity = private$.verbosity) |>
-          httr2::resp_body_json(simplifyVector = TRUE)
-      }
+
+      private$perform_request(req, format = private$.format, dry_run = private$dry_run, verbosity = private$.verbosity)
     },
+    #' @description
+    #' Performs a POST request to the BraPI server
+    #' @param endpoint The BraPI endpoint to be called
+    #' @param queryParams The query parameters to be used
+    #' @param page The page number of results to return, starting from 0
+    #' @param pageSize The maximum number of results to return per page
+    #' @return The response from the BraPI server
     perform_post_request = function(endpoint = NULL, queryParams = list(), page = NULL, pageSize = NULL) {
       
       if (!is.null(page)) {
@@ -85,11 +106,11 @@ BaseBrAPIClient <- R6Class(
       }
       
       if (private$.verbosity > 0) {
-        print("Query Params:")
-        print(queryParams)
+        message("Query Params:")
+        message(queryParams)
       }
       
-      req <- private$create_request(endpoint, method = 'POST')
+      req <- private$create_request(endpoint, method = 'POST', verbosity = private$.verbosity)
       
       req <- req |>
         req_headers("Content-Type" = "application/json")
@@ -97,22 +118,8 @@ BaseBrAPIClient <- R6Class(
       # For JSON body
       req <- req |>
         req_body_json(queryParams)
-      
-      if (private$.verbosity > 0) {
-        print(req)
-      }
-      
-      if (private$.verbosity > 0) {
-        print(req)
-      }
-      
-      if (isTRUE(private$.dry_run)) {
-        req |> httr2::req_dry_run()
-      } else {
-        req |>
-          httr2::req_perform(verbosity = private$.verbosity) |>
-          httr2::resp_body_json(simplifyVector = TRUE)
-      }
+
+      private$perform_request(req, format = private$.format, dry_run = private$dry_run, verbosity = private$.verbosity)
     }
   ),
   active = list(
@@ -132,7 +139,23 @@ BaseBrAPIClient <- R6Class(
         return(self)
       }
     },
-    #' @field server
+    #' @field format
+    #' Get or sets the format format of the response from the server, either  'list', 'json', 'string' or 'raw'.
+    #' In the case of setting it returns the BrAPIClient to allow for chaining.
+    format = function(value) {
+      if (missing(value)) {
+        return(private$.format)
+      } else {
+        if (is.null(private$.format) || private$.format != value) {
+          if (private$.verbosity > 0) {
+            message(paste0("Changing format to ", value))
+          }
+          private$.format <- value
+        }
+        return(self)
+      }
+    },
+    #' @field authentication
     #' Sets the authentication, which can either by a Bearer token or a authentication provider function
     authentication = function(value) {
       if (missing(value)) {
@@ -234,40 +257,48 @@ BaseBrAPIClient <- R6Class(
   ),
   private = list(
     .server = NULL,
+    .format = 'list',
     .authentication = NULL,
     .dry_run = FALSE,
     .max_tries = 1,
     .multi = NULL,
     .verbosity = 0,
-    guess_username = function() {
-      # rstudio server
-      username <- unname(Sys.getenv("LOGNAME"))
-      
-      # plain R
-      if (username == "") {
-        username <- unname(tolower(Sys.info()["user"]))
-      }
-      
-      if (username == "" || username == "unknown")
-        stop("Can't detect username automatically")
-      
-      return(username)
-    },
     validate_server = function() {
-      response <- self$perform_get_request('serverinfo')
-      
-      if (!is.null(response$metadata$status$code) && response$metadata$status$code == 200) {
+
+      if (private$.verbosity > 0) {
+        message (glue::glue("Validating server at {private$.server}"))
+      }
+
+      if (private$.server == "" || is.null(private$.server)) {
+        stop("Server URL is not set")
+      }
+
+      if (private$.dry_run > 0) {
         if (private$.verbosity > 0) {
-          print (response$metadata$status)
+          message (glue::glue("Set to dry run mode, not validating server at {private$.server}"))
         }
-        print ("Server is valid")
+
+        return()
+      }
+
+      req <- private$create_request('serverinfo', verbosity = 0)
+
+      response <- private$perform_request(req, format = 'json', dry_run = FALSE, verbosity = 0)
+      
+      if (!is.null(response$metadata) && !is.null(response$metadata$status) && !is.null(response$metadata$status$code) && response$metadata$status$code == 200) {
+        message ("Server is valid")
       } else {
-        print ("Server could not be validated with call to /serverinfo due to:")
-        print (response$metadata$status)
+        if (!is.null(!is.null(response$metadata) && response$metadata$status)) {
+          message ("Server could not be validated with call to /serverinfo due to:")
+          print(response$metadata$status)
+        } else {
+          message ("Server could not be validated with call to /serverinfo due to unknown error")
+          message ("Response was:")
+          print(response)
+        }
       }
     },
-    create_request = function(endpoint = NULL, method = NULL) {
-      
+    create_request = function(endpoint = NULL, method = NULL, verbosity = 0) {
       req <- httr2::request(private$.server)
       
       if (!is.null(endpoint)) {
@@ -283,16 +314,58 @@ BaseBrAPIClient <- R6Class(
       }
       
       authentication <- private$.authentication
-      
+
       if (!is.null(authentication)) {
-        if (is.function(authentication)) {
-          req <- req |> authentication()
+        if (inherits(authentication, "BaseAuth")) {
+          if (verbosity > 0) {
+            message ("Using authentication provider function")
+          }
+          req <- req |> authentication$authentication()
+
         } else {
-          req <- req |> httr2::req_auth_bearer_token(authentication)
+          if (is.character(x) && length(x) == 1) {
+            if (verbosity > 0) {
+              message ("Using Bearer token authentication")
+            }
+            req <- req |> httr2::req_auth_bearer_token(authentication)
+          } else {
+            stop("Unknown authentication method!")
+          }
         }
       }
-      
+
       return (req)
+    },
+    perform_request = function(req, format = 'list', dry_run = FALSE, verbosity = 0) {
+      if (verbosity > 0) {
+        message(glue("Sending Request: {format}"))
+        print(req)
+      }
+
+      if (isTRUE(dry_run)) {
+        req |> httr2::req_dry_run()
+      } else {
+        resp <- req |>
+          httr2::req_perform(verbosity = verbosity)
+
+        if (format == 'list') {
+          resp <- resp |>
+            httr2::resp_body_json(simplifyVector = TRUE)
+
+          resp <- parseJsonResonse(resp)
+        } else if (format == 'json') {
+          resp <- resp |>
+            httr2::resp_body_json(simplifyVector = TRUE)
+        } else if (format == 'string') {
+          resp <- resp |>
+            httr2::resp_body_string()
+        } else if (format == 'raw') {
+          resp <- resp |>
+            httr2::resp_body_raw()
+        }
+      }
+
+      return (resp)
     }
   )
 )

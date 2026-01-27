@@ -4,14 +4,25 @@
 \alias{getBrAPI}
 \title{Creates a BrAPIClient R6 Class object.}
 \usage{
-getBrAPI(server = NULL, authentication = NULL, verbose = FALSE)
+getBrAPI(
+  server = NULL,
+  format = "json",
+  authentication = NULL,
+  dry_run = FALSE,
+  verbosity = 0
+)
 }
 \arguments{
 \item{server}{The BraPI server URL to be used}
 
+\item{format}{The format of the response, either 'raw', 'json' or 'string'}
+
 \item{authentication}{The authentication string to be used if the server requires authentication}
 
-\item{verbose}{Set to TRUE to provide more verbose information what is happening}
+\item{dry_run}{If TRUE the client will perform a dry run and not actually perform the requests, useful for debugging}
+
+\item{verbosity}{Set verbosity level for httr2 requests. 0 = none, 1 = basic, 2 = headers, 3 = body. Aslo controls
+verbosity of messages from this client. Defaults to 0.}
 }
 \value{
 A configured BrAPIClient R6 Class object.

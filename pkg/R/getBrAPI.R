@@ -1,7 +1,9 @@
 #' Creates a BrAPIClient R6 Class object.
 #'
 #' @param server The BraPI server URL to be used
+#' @param format The format of the response, either 'raw', 'json' or 'string'
 #' @param authentication The authentication string to be used if the server requires authentication
+#' @param dry_run If TRUE the client will perform a dry run and not actually perform the requests, useful for debugging
 #' @param verbosity Set verbosity level for httr2 requests. 0 = none, 1 = basic, 2 = headers, 3 = body. Aslo controls
 #'   verbosity of messages from this client. Defaults to 0.
 #' @return A configured BrAPIClient R6 Class object.
@@ -12,23 +14,9 @@
 #' @importFrom glue glue
 #' @export
 getBrAPI <- function(server = NULL,
+                     format = "list",
                      authentication = NULL,
+                     dry_run = FALSE,
                      verbosity = 0) {
-  client <- BrAPIClient$new(server, authentication, verbosity)
+  client <- BrAPIClient$new(server, format, authentication, dry_run, verbosity)
 }
-
-
-getBrAPI <- function(server = NULL,
-                     authentication = NULL,
-                     verbosity = 0) {
-  client <- BrAPIClient$new(server, authentication, verbosity)
-}
-
-to_list <- function(x) {
-  if (!is.list(x)) {
-    list(x)
-  } else {
-    x
-  }
-}
-

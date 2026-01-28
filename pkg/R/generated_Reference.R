@@ -6,9 +6,7 @@
 #' @docType class
 #' @description The References class handles calling the BraAPI server and is a wrapper class around httr2 functionality for
 #' the Reference entity
-#'
-#' @examples
-#' References$new()
+#' @family generated
 #' @import R6
 #' @importFrom glue glue
 #' @export

@@ -6,9 +6,7 @@
 #' @docType class
 #' @description The ObservationUnits class handles calling the BraAPI server and is a wrapper class around httr2 functionality for
 #' the ObservationUnit entity
-#'
-#' @examples
-#' ObservationUnits$new()
+#' @family generated
 #' @import R6
 #' @importFrom glue glue
 #' @export

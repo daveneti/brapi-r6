@@ -5,9 +5,7 @@
 #' @docType class
 #' @description The BrAPIClient class handles the configuration of the BrAPI connection and
 #' is a wrapper class around httr2 functionality
-#'
-#' @examples
-#' BrAPIClient$new(token = "www.brapiserver.com")
+#' @family generated
 #' @import R6
 #' @export
 BrAPIClient <- R6Class(

@@ -6,9 +6,7 @@
 #' @docType class
 #' @description The AlleleMatrix class handles calling the BraAPI server and is a wrapper class around httr2 functionality for
 #' the AlleleMatrix entity
-#'
-#' @examples
-#' AlleleMatrix$new()
+#' @family generated
 #' @import R6
 #' @importFrom glue glue
 #' @export

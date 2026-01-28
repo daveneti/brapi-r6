@@ -6,9 +6,7 @@
 #' @docType class
 #' @description The Lists class handles calling the BraAPI server and is a wrapper class around httr2 functionality for
 #' the List entity
-#'
-#' @examples
-#' Lists$new()
+#' @family generated
 #' @import R6
 #' @importFrom glue glue
 #' @export

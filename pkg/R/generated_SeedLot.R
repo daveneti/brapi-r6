@@ -6,9 +6,7 @@
 #' @docType class
 #' @description The SeedLots class handles calling the BraAPI server and is a wrapper class around httr2 functionality for
 #' the SeedLot entity
-#'
-#' @examples
-#' SeedLots$new()
+#' @family generated
 #' @import R6
 #' @importFrom glue glue
 #' @export

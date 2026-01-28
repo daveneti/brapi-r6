@@ -6,9 +6,7 @@
 #' @docType class
 #' @description The Scales class handles calling the BraAPI server and is a wrapper class around httr2 functionality for
 #' the Scale entity
-#'
-#' @examples
-#' Scales$new()
+#' @family generated
 #' @import R6
 #' @importFrom glue glue
 #' @export

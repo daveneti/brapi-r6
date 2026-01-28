@@ -6,9 +6,7 @@
 #' @docType class
 #' @description The VariantSets class handles calling the BraAPI server and is a wrapper class around httr2 functionality for
 #' the VariantSet entity
-#'
-#' @examples
-#' VariantSets$new()
+#' @family generated
 #' @import R6
 #' @importFrom glue glue
 #' @export

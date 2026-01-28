@@ -6,9 +6,7 @@
 #' @docType class
 #' @description The PedigreeNodes class handles calling the BraAPI server and is a wrapper class around httr2 functionality for
 #' the PedigreeNode entity
-#'
-#' @examples
-#' PedigreeNodes$new()
+#' @family generated
 #' @import R6
 #' @importFrom glue glue
 #' @export

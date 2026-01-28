@@ -6,9 +6,7 @@
 #' @docType class
 #' @description The CrossingProjects class handles calling the BraAPI server and is a wrapper class around httr2 functionality for
 #' the CrossingProject entity
-#'
-#' @examples
-#' CrossingProjects$new()
+#' @family generated
 #' @import R6
 #' @importFrom glue glue
 #' @export

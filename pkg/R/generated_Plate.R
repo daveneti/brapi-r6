@@ -6,9 +6,7 @@
 #' @docType class
 #' @description The Plates class handles calling the BraAPI server and is a wrapper class around httr2 functionality for
 #' the Plate entity
-#'
-#' @examples
-#' Plates$new()
+#' @family generated
 #' @import R6
 #' @importFrom glue glue
 #' @export

@@ -6,9 +6,7 @@
 #' @docType class
 #' @description The Calls class handles calling the BraAPI server and is a wrapper class around httr2 functionality for
 #' the Call entity
-#'
-#' @examples
-#' Calls$new()
+#' @family generated
 #' @import R6
 #' @importFrom glue glue
 #' @export

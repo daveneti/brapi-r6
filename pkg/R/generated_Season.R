@@ -6,9 +6,7 @@
 #' @docType class
 #' @description The Seasons class handles calling the BraAPI server and is a wrapper class around httr2 functionality for
 #' the Season entity
-#'
-#' @examples
-#' Seasons$new()
+#' @family generated
 #' @import R6
 #' @importFrom glue glue
 #' @export

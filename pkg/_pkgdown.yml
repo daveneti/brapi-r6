@@ -13,14 +13,11 @@ reference:
   - title: Main functions
     contents:
       - getBrAPI
-  - title: Authentication
+  - title: Authentication Functions
     contents:
-      - title: Functions
-        contents:
-          - matches("authentication")
-      - title: Classes
-        contents:
-          - matches("authentication-classes")
+      - matches("authentication")
+  - title: Authentication Classes
+      - matches("authentication-classes")
   - title: Utilities
     contents:
       - matches("utilities")

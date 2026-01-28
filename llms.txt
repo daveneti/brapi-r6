@@ -1,0 +1,62 @@
+An R6 Class Library for BrAPI
+
+# Package index
+
+## All functions
+
+- [`AlleleMatrix`](AlleleMatrix.md) : AlleleMatrix Class
+- [`BaseAuth`](BaseAuth.md) : BaseAuth Class
+- [`BaseBrAPIClient`](BaseBrAPIClient.md) : BrAPIClient Class
+- [`BasicAuth`](BasicAuth.md) : BasicAuth Class
+- [`BrAPIClient`](BrAPIClient.md) : BrAPIClient Class
+- [`BreedingMethods`](BreedingMethods.md) : BreedingMethods Class
+- [`CallSets`](CallSets.md) : CallSets Class
+- [`Calls`](Calls.md) : Calls Class
+- [`Crosses`](Crosses.md) : Crosses Class
+- [`CrossingProjects`](CrossingProjects.md) : CrossingProjects Class
+- [`Events`](Events.md) : Events Class
+- [`GenomeMaps`](GenomeMaps.md) : GenomeMaps Class
+- [`Germplasm`](Germplasm.md) : Germplasm Class
+- [`GermplasmAttributeValues`](GermplasmAttributeValues.md) :
+  GermplasmAttributeValues Class
+- [`GermplasmAttributes`](GermplasmAttributes.md) : GermplasmAttributes
+  Class
+- [`Images`](Images.md) : Images Class
+- [`Lists`](Lists.md) : Lists Class
+- [`Locations`](Locations.md) : Locations Class
+- [`MarkerPositions`](MarkerPositions.md) : MarkerPositions Class
+- [`Methods`](Methods.md) : Methods Class
+- [`OAuthClientCredentials`](OAuthClientCredentials.md) :
+  OAuthClientCredentials Class
+- [`OAuthFlow`](OAuthFlow.md) : OAuthFlow Class
+- [`ObservationUnits`](ObservationUnits.md) : ObservationUnits Class
+- [`ObservationVariables`](ObservationVariables.md) :
+  ObservationVariables Class
+- [`Observations`](Observations.md) : Observations Class
+- [`Ontologies`](Ontologies.md) : Ontologies Class
+- [`PedigreeNodes`](PedigreeNodes.md) : PedigreeNodes Class
+- [`People`](People.md) : People Class
+- [`PlannedCrosses`](PlannedCrosses.md) : PlannedCrosses Class
+- [`Plates`](Plates.md) : Plates Class
+- [`Programs`](Programs.md) : Programs Class
+- [`ReferenceSets`](ReferenceSets.md) : ReferenceSets Class
+- [`References`](References.md) : References Class
+- [`Samples`](Samples.md) : Samples Class
+- [`Scales`](Scales.md) : Scales Class
+- [`Seasons`](Seasons.md) : Seasons Class
+- [`SeedLots`](SeedLots.md) : SeedLots Class
+- [`Studies`](Studies.md) : Studies Class
+- [`Traits`](Traits.md) : Traits Class
+- [`Trials`](Trials.md) : Trials Class
+- [`VariantSets`](VariantSets.md) : VariantSets Class
+- [`Variants`](Variants.md) : Variants Class
+- [`basic_authentication()`](basic_authentication.md) : Creates a
+  Authorization provider for BrAPIClient R6 Class object.
+- [`client_credentials()`](client_credentials.md) : Creates an OAuth
+  Client Credentials provider for BrAPIClient R6 Class object. '
+- [`getBrAPI()`](getBrAPI.md) : Creates a BrAPIClient R6 Class object.
+- [`guess_username()`](guess_username.md) : Attempts to guess the
+  username from the system environment
+- [`oauth_flow()`](oauth_flow.md) : Creates an OAuth provider for
+  BrAPIClient R6 Class object. '
+

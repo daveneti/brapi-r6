@@ -7,7 +7,7 @@ This R package contains a set of R6 Classes for interacting with a BrAPI server.
 brAPI <- getBrAPI("www.brapiserver.com")
 
 # Get Studies associated with a breeding program
-studies <- brAPI$studies$getAll(programName="Breeding Program A")
+studies <- brAPI$studies$getAll(programNames="Breeding Program A")
 
 # Get Studies associated with serveral breeding programs
 studies <- brAPI$studies$getAll(programNames= c("Breeding Program A", "Breeding Program A"))
@@ -16,12 +16,15 @@ studies <- brAPI$studies$getAll(programNames= c("Breeding Program A", "Breeding 
 germplasm <- brAPI$germplasm$getAll(pageSize=5000)
 ```
 
-For more information on how to use the package, see the R package documentation. 
+Note that in the cases where the filter name is plural, you can provide a single value or 
+vector of values to filter on. However, for singular filter names, you can only provide a single value.
+
+For more information on how to use the package, see the [R package documentation](pkg/man). 
 
 # Authentication
 
 This is a tricky topic, as BrAPI servers can use different authentication methods, so it requires special mention.
-If the BrAPI server you are connecting to does not require authentication you can skip this section. If it does, read on.
+If the BrAPI server you are connecting to do not require authentication you can skip this section. If it does, read on.
 You will need to know what authentication method the BrAPI server uses.
 
 The package supports various authentication methods, but in summary the underlying httr package is used for authentication. 
@@ -84,13 +87,17 @@ brAPI <- getBrAPI("www.brapiserver.com", authentication = auth)
 ```
 
 Other OAuth2.0 flows include
-* oauth_device() uses the “device” flow which is designed for devices like TVs that don’t have an easy way to enter data. It also works well from the console.
+* oauth_device() uses the “device” flow which is designed for devices like TVs that don’t have an easy way to enter data. 
+It also works well from the console.
 * oauth_password() exchanges a user name and password for an access token.
 * oauth_refresh() works directly with a refresh token that you already have. It’s useful for testing and automation.
 
+These flows are described in more detail in the httr documentation. However, they are not yet implemented in this package.
+
 # Installation
 This package can be installed directly from GitHub, using the devtools package. Remember to use 
-the *main* branch. The other branches are for development purposes only and do not contain the generated code.
+the *main* branch. The other branches are for development purposes only and do not contain the generated code. 
+See sections below for more details on how to generate the code yourself.
 
 ```R
 # Install devtools, if you haven't already
@@ -98,9 +105,8 @@ install.packages("devtools")
 
 # Install the BrAPI package from GitHub
 library(devtools)
-install_github("davenet/brapi-r6")
+install_github("daveneti/brapi-r6")
 ```
-
 # Documentation
 
 See the package documentation

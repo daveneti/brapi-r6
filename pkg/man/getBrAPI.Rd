@@ -6,7 +6,7 @@
 \usage{
 getBrAPI(
   server = NULL,
-  format = "json",
+  format = "list",
   authentication = NULL,
   dry_run = FALSE,
   verbosity = 0

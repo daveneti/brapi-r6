@@ -15,21 +15,28 @@ BaseAuth <- R6Class(
     initialize = function() {
     },
     #' @description
-    #' Provides the authentication function for httr2 requests
+    #' Provides the authentication for httr2 requests
     #' needs to be implemented in subclasses
     #' @param req The httr2 request object
-    #' @return The httr2 request object with the Basic Authorization header added
+    #' @return The httr2 request object with the Authorization header added
     authentication = function(req) {
       stop("Use a subclass that implements this method")
+    },
+    #' @description
+    #' Provides the token for httr2 requests
+    #' needs to be implemented in subclasses
+    #' @return The token for httr2 requests
+    token = function() {
+      stop("The token function is not implemented for this use case")
     }
   )
 )
 
-#' Creates a Basic Authorization provider for BrAPIClient R6 Class object.
+#' Creates a Authorization provider for BrAPIClient R6 Class object.
 #'
-#' @param username The username to be used for Basic Authorization. If NULL it will attempt to guess the username from the system.
-#' @param password The password to be used for Basic Authorization. If NULL it will prompt for the password.
-#' @return A configured Basic Authorization provider R6 Class object.
+#' @param username The username to be used for Authorization. If NULL it will attempt to guess the username from the system.
+#' @param password The password to be used for Authorization. If NULL it will prompt for the password.
+#' @return A configured Authorization provider R6 Class object.
 #' @examples
 #' basic_authentication("usernamre", "password")
 #' @import httr2
@@ -46,7 +53,7 @@ basic_authentication <- function(username = guess_username(), password = NULL) {
 #' The BasicAuth class provides basic authentication functionality for httr2 requests
 #' @title BasicAuth Class
 #' @docType class
-#' @description The BasicAuth class handles Basic Authorization for httr2 requests
+#' @description The BasicAuth class handles Authorization for httr2 requests
 #'
 #' @import httr2
 #' @import R6
@@ -58,8 +65,8 @@ BasicAuth <- R6Class(
     #' @description
     #' Creates a new instance of this [R6][R6::R6Class] class.
     #' It is not recommended that this object is created separately from the basic_authentication() function
-    #' @param username The username to be used for Basic Authorization.
-    #' @param password The password to be used for Basic Authorization.
+    #' @param username The username to be used for Authorization.
+    #' @param password The password to be used for Authorization.
     #'
     initialize = function(username = NULL, password = NULL) {
       private$.username <- username
@@ -68,7 +75,7 @@ BasicAuth <- R6Class(
     #' @description
     #' Provides the authentication function for httr2 requests
     #' @param req The httr2 request object
-    #' @return The httr2 request object with the Basic Authorization header added
+    #' @return The httr2 request object with the Authorization header added
     authentication = function(req) {
       return(req |> httr2::req_auth_basic(private$.username, private$.password))
     }
@@ -173,9 +180,24 @@ OAuthFlow <- R6Class(
     #' @description
     #' Provides the authentication function for httr2 requests
     #' @param req The httr2 request object
-    #' @return The httr2 request object with the Basic Authorization header added
+    #' @return The httr2 request object with the Authorization header added
     authentication = function(req) {
       return(req |> httr2::req_oauth_auth_code(
+        client = private$.client,
+        auth_url = private$.auth_url,
+        scope = private$.scope,
+        pkce = private$.pkce,
+        auth_params = private$.auth_params,
+        token_params = private$.token_params,
+        redirect_uri = private$.redirect_uri
+      ))
+    },
+    #' @description
+    #' Provides the authentication token for httr2 requests
+    #' @param req The httr2 request object
+    #' @return The authentication token
+    token = function(req) {
+      return(httr2::oauth_flow_auth_code(
         client = private$.client,
         auth_url = private$.auth_url,
         scope = private$.scope,
@@ -264,12 +286,22 @@ OAuthClientCredentials <- R6Class(
       private$.scope <- scope
       private$.token_params <- token_params
     },
-        #' @description
-        #' Provides the authentication function for httr2 requests
-        #' @param req The httr2 request object
-        #' @return The httr2 request object with the Basic Authorization header added
+    #' @description
+    #' Provides the authentication token for httr2 requests
+    #' @param req The httr2 request object
+    #' @return The httr2 request object with the Authorization header added
     authentication = function(req) {
       return(req |> httr2::req_oauth_client_credentials(
+        client = private$.client,
+        scope = private$.scope,
+        token_params = private$.token_params
+      ))
+    },
+    #' @description
+    #' Provides the authentication function for httr2 requests
+    #' @return The authentication token
+    token = function(req) {
+      return(httr2::oauth_flow_client_credentials(
         client = private$.client,
         scope = private$.scope,
         token_params = private$.token_params
@@ -301,3 +333,4 @@ guess_username <- function() {
 
   return(username)
 }
+

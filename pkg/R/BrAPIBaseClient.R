@@ -206,7 +206,7 @@ BaseBrAPIClient <- R6Class(
           if (private$.verbosity > 0 || value > 0) {
             message(paste0("Changing verbosity to ", value))
           }
-          private$.max_tries <- value
+          private$.verbosity <- value
         }
         return(self)
       }

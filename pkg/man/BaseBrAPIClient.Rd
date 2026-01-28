@@ -57,7 +57,7 @@ It is not recommended that this object is created separately from the getBrAPI f
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{BaseBrAPIClient$new(
   server = NULL,
-  format = "dataframe",
+  format = "list",
   authentication = NULL,
   dry_run = FALSE,
   verbosity = 0

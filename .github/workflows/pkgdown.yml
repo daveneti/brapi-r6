@@ -21,19 +21,14 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y libcurl4-openssl-dev libssl-dev libxml2-dev
 
-      - name: Install R package dependencies
+      - name: Install R package dependencies, , Document package, Build pkgdown site
         run: |
           install.packages('devtools')
           install.packages('pkgdown')
           devtools::install_deps(dependencies = TRUE)
+          devtools::document(pkg = 'pkg')
+          pkgdown::build_site(pkg = 'pkg')
         shell: Rscript {0}
-
-      - name: Document package
-        run: Rscript -e "devtools::document(pkg = 'pkg')"
-
-      - name: Build pkgdown site
-        run: Rscript -e "pkgdown::build_site(pkg = 'pkg')"
-
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:

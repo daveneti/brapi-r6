@@ -15,13 +15,13 @@ reference:
       - getBrAPI
   - title: Authentication Functions
     contents:
-      - family: authentication
+      - 'family(authentication)'
   - title: Authentication Classes
     contents:
-      - family: authentication-classes
+      - 'family(authentication-classes)'
   - title: Utilities
     contents:
-      - family: utilities
+      - 'family(utilities)'
   - title: Generated Entity Classes and BrAPIClient
     contents:
-      - family: generated
+      - 'family(generated)'

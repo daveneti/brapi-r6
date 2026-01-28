@@ -10,6 +10,14 @@ The OAuthClientCredentials class handles OAuth Client Credentials for httr2 requ
 \details{
 The OAuthClientCredentials class provides OAuth Client Credentials functionality for httr2 requests
 }
+\seealso{
+Other authentication-classes: 
+\code{\link{BaseAuth}},
+\code{\link{BasicAuth}},
+\code{\link{OAuthFlow}}
+}
+\concept{authentication-classes}
+\keyword{authentication-class}
 \section{Super class}{
 \code{\link[BrAPI.R6:BaseAuth]{BrAPI.R6::BaseAuth}} -> \code{OAuthClientCredentials}
 }

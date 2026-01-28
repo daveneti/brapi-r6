@@ -10,6 +10,14 @@ The OAuthFlow class handles OAuth for httr2 requests
 \details{
 The OAuthFlow class provides OAuth functionality for httr2 requests
 }
+\seealso{
+Other authentication-classes: 
+\code{\link{BaseAuth}},
+\code{\link{BasicAuth}},
+\code{\link{OAuthClientCredentials}}
+}
+\concept{authentication-classes}
+\keyword{authentication-class}
 \section{Super class}{
 \code{\link[BrAPI.R6:BaseAuth]{BrAPI.R6::BaseAuth}} -> \code{OAuthFlow}
 }

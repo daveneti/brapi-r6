@@ -4,7 +4,7 @@
 #' @docType class
 #' @description The BaseBrAPIClient class handles the configuration of the BrAPI connection and
 #' is a wrapper class around httr2 functionality. Do not use directly, only use the generated subclass BrAPIClient
-#'
+#' @keywords internal
 #' @import R6
 #' @export
 BaseBrAPIClient <- R6Class(

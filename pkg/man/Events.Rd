@@ -12,9 +12,47 @@ the Event entity
 The Events class handles calling the BraAPI server and is a wrapper class around httr2 functionality for
 the Event entity
 }
-\examples{
-Events$new()
+\seealso{
+Other generated: 
+\code{\link{AlleleMatrix}},
+\code{\link{BrAPIClient}},
+\code{\link{BreedingMethods}},
+\code{\link{CallSets}},
+\code{\link{Calls}},
+\code{\link{Crosses}},
+\code{\link{CrossingProjects}},
+\code{\link{GenomeMaps}},
+\code{\link{Germplasm}},
+\code{\link{GermplasmAttributeValues}},
+\code{\link{GermplasmAttributes}},
+\code{\link{Images}},
+\code{\link{Lists}},
+\code{\link{Locations}},
+\code{\link{MarkerPositions}},
+\code{\link{Methods}},
+\code{\link{ObservationUnits}},
+\code{\link{ObservationVariables}},
+\code{\link{Observations}},
+\code{\link{Ontologies}},
+\code{\link{PedigreeNodes}},
+\code{\link{People}},
+\code{\link{PlannedCrosses}},
+\code{\link{Plates}},
+\code{\link{Programs}},
+\code{\link{ReferenceSets}},
+\code{\link{References}},
+\code{\link{Samples}},
+\code{\link{Scales}},
+\code{\link{Seasons}},
+\code{\link{SeedLots}},
+\code{\link{Studies}},
+\code{\link{Traits}},
+\code{\link{Trials}},
+\code{\link{VariantSets}},
+\code{\link{Variants}}
 }
+\concept{generated}
+\keyword{generated}
 \section{Methods}{
 \subsection{Public methods}{
 \itemize{

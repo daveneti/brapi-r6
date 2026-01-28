@@ -2,8 +2,7 @@
 % Please edit documentation in R/authentication.R
 \name{oauth_flow}
 \alias{oauth_flow}
-\title{Creates an OAuth provider for BrAPIClient R6 Class object.
-'}
+\title{Creates an OAuth provider for BrAPIClient R6 Class object.}
 \usage{
 oauth_flow(
   id,
@@ -44,8 +43,14 @@ A configured OAuth provider R6 Class object.
 }
 \description{
 Creates an OAuth provider for BrAPIClient R6 Class object.
-'
 }
 \examples{
 oauth_flow("client_id", "client_secret", "https://example.com/token", "https://example.com/auth")
 }
+\seealso{
+Other authentication: 
+\code{\link{basic_authentication}()},
+\code{\link{client_credentials}()}
+}
+\concept{authentication}
+\keyword{authentication}

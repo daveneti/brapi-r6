@@ -15,3 +15,5 @@ Attempts to guess the username from the system environment
 \examples{
 guess_username()
 }
+\concept{utilities}
+\keyword{utility}

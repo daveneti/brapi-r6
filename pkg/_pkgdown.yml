@@ -23,7 +23,7 @@ reference:
           - matches("authentication-classes")
   - title: Utilities
     contents:
-      matches("utilities")
+      - matches("utilities")
   - title: Generated Entity Classes and BrAPIClient
     contents:
       - matches("generated")

@@ -2,7 +2,7 @@
 #' @title BaseAuth Class
 #' @docType class
 #' @description The BaseAuth is a super class for all classes that provide authentication functionality for httr2 requests
-#'
+#' @family authentication-classes
 #' @import R6
 #' @export
 BaseAuth <- R6Class(
@@ -33,12 +33,12 @@ BaseAuth <- R6Class(
 )
 
 #' Creates a Authorization provider for BrAPIClient R6 Class object.
-#'
+#' @family authentication
 #' @param username The username to be used for Authorization. If NULL it will attempt to guess the username from the system.
 #' @param password The password to be used for Authorization. If NULL it will prompt for the password.
 #' @return A configured Authorization provider R6 Class object.
 #' @examples
-#' basic_authentication("usernamre", "password")
+#' basic_authentication("username", "password")
 #' @import httr2
 #' @import getPass
 #' @export
@@ -54,7 +54,7 @@ basic_authentication <- function(username = guess_username(), password = NULL) {
 #' @title BasicAuth Class
 #' @docType class
 #' @description The BasicAuth class handles Authorization for httr2 requests
-#'
+#' @family authentication-classes
 #' @import httr2
 #' @import R6
 #' @export
@@ -87,7 +87,7 @@ BasicAuth <- R6Class(
 )
 
 #' Creates an OAuth provider for BrAPIClient R6 Class object.
-#''
+#' @family authentication
 #' @param id The client ID to be used for OAuth Authorization.
 #' @param secret The client secret to be used for OAuth Authorization.
 #' @param token_url The token URL to be used for OAuth Authorization.
@@ -131,7 +131,7 @@ oauth_flow <- function(id,
 #' @title OAuthFlow Class
 #' @docType class
 #' @description The OAuthFlow class handles OAuth for httr2 requests
-#'
+#' @family authentication-classes
 #' @import httr2
 #' @import R6
 #' @export
@@ -220,7 +220,7 @@ OAuthFlow <- R6Class(
 )
 
 #' Creates an OAuth Client Credentials provider for BrAPIClient R6 Class object.
-#''
+#' @family authentication
 #' @param id The client ID to be used for OAuth Authorization.
 #' @param secret The client secret to be used for OAuth Authorization.
 #' @param token_url The token URL to be used for OAuth Authorization.
@@ -252,7 +252,7 @@ client_credentials <- function(id,
 #' @title OAuthClientCredentials Class
 #' @docType class
 #' @description The OAuthClientCredentials class handles OAuth Client Credentials for httr2 requests
-#'
+#' @family authentication-classes
 #' @import httr2
 #' @import R6
 #' @export
@@ -317,6 +317,7 @@ OAuthClientCredentials <- R6Class(
 
 #' Attempts to guess the username from the system environment
 #' @return The guessed username
+#' @family utilities
 #' @examples
 #' guess_username()
 guess_username <- function() {

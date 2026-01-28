@@ -3,6 +3,7 @@
 ## Main functions
 
 - [`getBrAPI()`](getBrAPI.md) : Creates a BrAPIClient R6 Class object.
+- [`BrAPIClient`](BrAPIClient.md) : BrAPIClient Class
 
 ## Authentication
 
@@ -34,7 +35,7 @@ Classes to handle authentication with BrAPI servers.
 - [`guess_username()`](guess_username.md) : Attempts to guess the
   username from the system environment
 
-## Generated Entity Classes and BrAPIClient
+## Generated Entity Classes
 
 - [`AlleleMatrix`](AlleleMatrix.md) : AlleleMatrix Class
 - [`BrAPIClient`](BrAPIClient.md) : BrAPIClient Class

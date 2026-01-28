@@ -1,5 +1,15 @@
 This R package contains a set of R6 Classes for interacting with a BrAPI server. 
 
+## Table of Contents
+
+- [Quick Start](#quick-start)
+- [Authentication](#authentication)
+- [Installation](#installation)
+- [Documentation](#documentation)
+- [Using your own BrAPI Specification](#using-your-own-brapi-specification)
+- [Development](#development)
+- [License](#license)
+
 # Quick Start
 
 ```R

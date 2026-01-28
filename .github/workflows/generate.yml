@@ -61,6 +61,13 @@ jobs:
       - name: Generate R Code
         working-directory: ./main/generator
         run: ./gradlew generateR
+      - name: Set up R
+        uses: r-lib/actions/setup-r@v2
+      - name: Install devtools
+        run: Rscript -e "install.packages('devtools')"
+      - name: Document R package
+        working-directory: main/pkg
+        run: Rscript -e "devtools::document()"
       - if: needs.check.outputs.skip_commit == 'false'
         uses: stefanzweifel/git-auto-commit-action@v5
         with:

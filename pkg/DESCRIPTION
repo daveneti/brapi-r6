@@ -13,7 +13,8 @@ Imports:
     tidyr,
     httr2,
     jsonlite,
-    glue
+    glue,
+    getPass
 Suggests:
     testthat,
     tidyverse

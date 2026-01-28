@@ -1,0 +1,26 @@
+url: ~
+template:
+  bootstrap: 5
+  bslib:
+    font-size-base: "0.8rem"
+    body-text-align: "justify"
+    line-height-base:	1.75
+    line-height-sm:	1.5
+    line-height-lg: 2.25
+    headings-font-weight: 600
+
+reference:
+  - title: Main functions
+    contents:
+      - getBrAPI
+  - title: Authentication Functions
+    contents:
+      - matches("authentication")
+  - title: Authentication Classes
+      - matches("authentication-classes")
+  - title: Utilities
+    contents:
+      - matches("utilities")
+  - title: Generated Entity Classes and BrAPIClient
+    contents:
+      - matches("generated")

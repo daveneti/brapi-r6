@@ -2,13 +2,27 @@ This R package contains a set of R6 Classes for interacting with a BrAPI server.
 
 ## Table of Contents
 
+- [Installation](#installation)
 - [Quick Start](#quick-start)
 - [Authentication](#authentication)
-- [Installation](#installation)
 - [Documentation](#documentation)
 - [Using your own BrAPI Specification](#using-your-own-brapi-specification)
 - [Development](#development)
 - [License](#license)
+
+# Installation
+This package can be installed directly from GitHub, using the devtools package. Remember to use
+the *main* branch. The other branches are for development purposes only and do not contain the generated code.
+See sections below for more details on how to generate the code yourself.
+
+```R
+# Install devtools, if you haven't already
+install.packages("devtools")
+
+# Install the BrAPI package from GitHub
+library(devtools)
+install_github("daveneti/brapi-r6/pkg")
+```
 
 # Quick Start
 
@@ -104,19 +118,6 @@ It also works well from the console.
 
 These flows are described in more detail in the httr documentation. However, they are not yet implemented in this package.
 
-# Installation
-This package can be installed directly from GitHub, using the devtools package. Remember to use 
-the *main* branch. The other branches are for development purposes only and do not contain the generated code. 
-See sections below for more details on how to generate the code yourself.
-
-```R
-# Install devtools, if you haven't already
-install.packages("devtools")
-
-# Install the BrAPI package from GitHub
-library(devtools)
-install_github("daveneti/brapi-r6/pkg")
-```
 # Documentation
 
 See the package documentation

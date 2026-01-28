@@ -18,6 +18,7 @@ The OAuthFlow class provides OAuth functionality for httr2 requests
 \itemize{
 \item \href{#method-OAuthFlow-new}{\code{OAuthFlow$new()}}
 \item \href{#method-OAuthFlow-authentication}{\code{OAuthFlow$authentication()}}
+\item \href{#method-OAuthFlow-token}{\code{OAuthFlow$token()}}
 \item \href{#method-OAuthFlow-clone}{\code{OAuthFlow$clone()}}
 }
 }
@@ -86,7 +87,27 @@ Provides the authentication function for httr2 requests
 \if{html}{\out{</div>}}
 }
 \subsection{Returns}{
-The httr2 request object with the Basic Authorization header added
+The httr2 request object with the Authorization header added
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-OAuthFlow-token"></a>}}
+\if{latex}{\out{\hypertarget{method-OAuthFlow-token}{}}}
+\subsection{Method \code{token()}}{
+Provides the authentication token for httr2 requests
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{OAuthFlow$token(req)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{req}}{The httr2 request object}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+The authentication token
 }
 }
 \if{html}{\out{<hr>}}

@@ -18,6 +18,7 @@ The OAuthClientCredentials class provides OAuth Client Credentials functionality
 \itemize{
 \item \href{#method-OAuthClientCredentials-new}{\code{OAuthClientCredentials$new()}}
 \item \href{#method-OAuthClientCredentials-authentication}{\code{OAuthClientCredentials$authentication()}}
+\item \href{#method-OAuthClientCredentials-token}{\code{OAuthClientCredentials$token()}}
 \item \href{#method-OAuthClientCredentials-clone}{\code{OAuthClientCredentials$clone()}}
 }
 }
@@ -61,7 +62,7 @@ See https://httr2.r-lib.org/reference/req_oauth_auth_code.html
 \if{html}{\out{<a id="method-OAuthClientCredentials-authentication"></a>}}
 \if{latex}{\out{\hypertarget{method-OAuthClientCredentials-authentication}{}}}
 \subsection{Method \code{authentication()}}{
-Provides the authentication function for httr2 requests
+Provides the authentication token for httr2 requests
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{OAuthClientCredentials$authentication(req)}\if{html}{\out{</div>}}
 }
@@ -74,7 +75,20 @@ Provides the authentication function for httr2 requests
 \if{html}{\out{</div>}}
 }
 \subsection{Returns}{
-The httr2 request object with the Basic Authorization header added
+The httr2 request object with the Authorization header added
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-OAuthClientCredentials-token"></a>}}
+\if{latex}{\out{\hypertarget{method-OAuthClientCredentials-token}{}}}
+\subsection{Method \code{token()}}{
+Provides the authentication function for httr2 requests
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{OAuthClientCredentials$token()}\if{html}{\out{</div>}}
+}
+
+\subsection{Returns}{
+The authentication token
 }
 }
 \if{html}{\out{<hr>}}

@@ -25,6 +25,8 @@ PedigreeNodes <- R6Class(
     },
     #' @description
     #' Gets a list PedigreeNode objects from the BrAPI server
+    #' Note the filtering arguments are all optional and can be combined to filter the results
+    #' The value of the filters an be a single value or a vector of values
     #' @param commonCropNames The BrAPI Common Crop Name is the simple, generalized, widely accepted name of the organism being researched.
     #' @param germplasmDbIds List of IDs which uniquely identify germplasm to search for
     #' @param germplasmNames List of human readable names to identify germplasm to search for

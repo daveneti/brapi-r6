@@ -37,6 +37,8 @@ People <- R6Class(
     },
     #' @description
     #' Gets a list Person objects from the BrAPI server
+    #' Note the filtering arguments are all optional and can be combined to filter the results
+    #' The value of the filters an be a single value or a vector of values
     #' @param commonCropNames The BrAPI Common Crop Name is the simple, generalized, widely accepted name of the organism being researched.
     #' @param programDbIds A BrAPI Program represents the high level organization or group who is responsible for conducting trials and studies.
     #' @param programNames Use this parameter to only return results associated with the given program names.

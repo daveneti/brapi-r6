@@ -37,6 +37,8 @@ ObservationVariables <- R6Class(
     },
     #' @description
     #' Gets a list ObservationVariable objects from the BrAPI server
+    #' Note the filtering arguments are all optional and can be combined to filter the results
+    #' The value of the filters an be a single value or a vector of values
     #' @param observationVariableDbIds The DbIds of Variables to search for
     #' @param observationVariableNames The names of Variables to search for
     #' @param observationVariablePUIs The Permanent Unique Identifier of an Observation Variable, usually in the form of a URI

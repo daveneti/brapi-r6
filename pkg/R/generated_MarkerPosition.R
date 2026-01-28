@@ -25,6 +25,8 @@ MarkerPositions <- R6Class(
     },
     #' @description
     #' Gets a list MarkerPosition objects from the BrAPI server
+    #' Note the filtering arguments are all optional and can be combined to filter the results
+    #' The value of the filters an be a single value or a vector of values
     #' @param mapDbIds A list of IDs which uniquely identify `GenomeMaps` within the given database server
     #' @param linkageGroupNames A list of Uniquely Identifiable linkage group names
     #' @param variantDbIds A list of IDs which uniquely identify `Variants` within the given database server

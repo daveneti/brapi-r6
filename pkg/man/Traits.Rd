@@ -69,6 +69,8 @@ returns a Trait object by ID.
 \if{latex}{\out{\hypertarget{method-Traits-getAll}{}}}
 \subsection{Method \code{getAll()}}{
 Gets a list Trait objects from the BrAPI server
+Note the filtering arguments are all optional and can be combined to filter the results
+The value of the filters an be a single value or a vector of values
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{Traits$getAll(
   commonCropNames = NULL,

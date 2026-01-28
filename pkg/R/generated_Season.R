@@ -37,6 +37,8 @@ Seasons <- R6Class(
     },
     #' @description
     #' Gets a list Season objects from the BrAPI server
+    #' Note the filtering arguments are all optional and can be combined to filter the results
+    #' The value of the filters an be a single value or a vector of values
     #' @param seasonDbIds The unique identifier for a season.
     #' @param seasons The term to describe a given season.
     #' @param seasonNames The term to describe a given season.

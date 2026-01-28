@@ -48,6 +48,8 @@ It is not recommended that this object is created separately from the BrAPIClien
 \if{latex}{\out{\hypertarget{method-MarkerPositions-getAll}{}}}
 \subsection{Method \code{getAll()}}{
 Gets a list MarkerPosition objects from the BrAPI server
+Note the filtering arguments are all optional and can be combined to filter the results
+The value of the filters an be a single value or a vector of values
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{MarkerPositions$getAll(
   mapDbIds = NULL,

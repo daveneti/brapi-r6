@@ -2,20 +2,20 @@
 % Please edit documentation in R/authentication.R
 \name{basic_authentication}
 \alias{basic_authentication}
-\title{Creates a Basic Authorization provider for BrAPIClient R6 Class object.}
+\title{Creates a Authorization provider for BrAPIClient R6 Class object.}
 \usage{
 basic_authentication(username = guess_username(), password = NULL)
 }
 \arguments{
-\item{username}{The username to be used for Basic Authorization. If NULL it will attempt to guess the username from the system.}
+\item{username}{The username to be used for Authorization. If NULL it will attempt to guess the username from the system.}
 
-\item{password}{The password to be used for Basic Authorization. If NULL it will prompt for the password.}
+\item{password}{The password to be used for Authorization. If NULL it will prompt for the password.}
 }
 \value{
-A configured Basic Authorization provider R6 Class object.
+A configured Authorization provider R6 Class object.
 }
 \description{
-Creates a Basic Authorization provider for BrAPIClient R6 Class object.
+Creates a Authorization provider for BrAPIClient R6 Class object.
 }
 \examples{
 basic_authentication("usernamre", "password")

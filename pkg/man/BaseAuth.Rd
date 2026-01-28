@@ -15,6 +15,7 @@ The BaseAuth is a super class for all classes that provide authentication functi
 \itemize{
 \item \href{#method-BaseAuth-new}{\code{BaseAuth$new()}}
 \item \href{#method-BaseAuth-authentication}{\code{BaseAuth$authentication()}}
+\item \href{#method-BaseAuth-token}{\code{BaseAuth$token()}}
 \item \href{#method-BaseAuth-clone}{\code{BaseAuth$clone()}}
 }
 }
@@ -33,7 +34,7 @@ It is not recommended that this object is created separately
 \if{html}{\out{<a id="method-BaseAuth-authentication"></a>}}
 \if{latex}{\out{\hypertarget{method-BaseAuth-authentication}{}}}
 \subsection{Method \code{authentication()}}{
-Provides the authentication function for httr2 requests
+Provides the authentication for httr2 requests
 needs to be implemented in subclasses
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{BaseAuth$authentication(req)}\if{html}{\out{</div>}}
@@ -47,7 +48,21 @@ needs to be implemented in subclasses
 \if{html}{\out{</div>}}
 }
 \subsection{Returns}{
-The httr2 request object with the Basic Authorization header added
+The httr2 request object with the Authorization header added
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-BaseAuth-token"></a>}}
+\if{latex}{\out{\hypertarget{method-BaseAuth-token}{}}}
+\subsection{Method \code{token()}}{
+Provides the token for httr2 requests
+needs to be implemented in subclasses
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{BaseAuth$token()}\if{html}{\out{</div>}}
+}
+
+\subsection{Returns}{
+The token for httr2 requests
 }
 }
 \if{html}{\out{<hr>}}

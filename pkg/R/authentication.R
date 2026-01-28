@@ -300,7 +300,7 @@ OAuthClientCredentials <- R6Class(
     #' @description
     #' Provides the authentication function for httr2 requests
     #' @return The authentication token
-    token = function(req) {
+    token = function() {
       return(httr2::oauth_flow_client_credentials(
         client = private$.client,
         scope = private$.scope,

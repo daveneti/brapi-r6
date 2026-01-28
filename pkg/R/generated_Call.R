@@ -25,6 +25,8 @@ Calls <- R6Class(
     },
     #' @description
     #' Gets a list Call objects from the BrAPI server
+    #' Note the filtering arguments are all optional and can be combined to filter the results
+    #' The value of the filters an be a single value or a vector of values
     #' @param callSetDbIds A list of IDs which uniquely identify `CallSets` within the given database server
     #' @param variantDbIds A list of IDs which uniquely identify `Variant` within the given database server
     #' @param variantSetDbIds A list of IDs which uniquely identify `VariantSets` within the given database server

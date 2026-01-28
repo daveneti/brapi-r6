@@ -37,6 +37,8 @@ Scales <- R6Class(
     },
     #' @description
     #' Gets a list Scale objects from the BrAPI server
+    #' Note the filtering arguments are all optional and can be combined to filter the results
+    #' The value of the filters an be a single value or a vector of values
     #' @param commonCropNames The BrAPI Common Crop Name is the simple, generalized, widely accepted name of the organism being researched.
     #' @param ontologyDbIds The unique identifier for an ontology definition.
     #' @param programDbIds A BrAPI Program represents the high level organization or group who is responsible for conducting trials and studies.

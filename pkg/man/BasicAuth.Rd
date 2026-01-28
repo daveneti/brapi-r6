@@ -5,7 +5,7 @@
 \alias{BasicAuth}
 \title{BasicAuth Class}
 \description{
-The BasicAuth class handles Basic Authorization for httr2 requests
+The BasicAuth class handles Authorization for httr2 requests
 }
 \details{
 The BasicAuth class provides basic authentication functionality for httr2 requests
@@ -21,6 +21,13 @@ The BasicAuth class provides basic authentication functionality for httr2 reques
 \item \href{#method-BasicAuth-clone}{\code{BasicAuth$clone()}}
 }
 }
+\if{html}{\out{
+<details open><summary>Inherited methods</summary>
+<ul>
+<li><span class="pkg-link" data-pkg="BrAPI.R6" data-topic="BaseAuth" data-id="token"><a href='../../BrAPI.R6/html/BaseAuth.html#method-BaseAuth-token'><code>BrAPI.R6::BaseAuth$token()</code></a></span></li>
+</ul>
+</details>
+}}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-BasicAuth-new"></a>}}
 \if{latex}{\out{\hypertarget{method-BasicAuth-new}{}}}
@@ -34,9 +41,9 @@ It is not recommended that this object is created separately from the basic_auth
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{username}}{The username to be used for Basic Authorization.}
+\item{\code{username}}{The username to be used for Authorization.}
 
-\item{\code{password}}{The password to be used for Basic Authorization.}
+\item{\code{password}}{The password to be used for Authorization.}
 }
 \if{html}{\out{</div>}}
 }
@@ -58,7 +65,7 @@ Provides the authentication function for httr2 requests
 \if{html}{\out{</div>}}
 }
 \subsection{Returns}{
-The httr2 request object with the Basic Authorization header added
+The httr2 request object with the Authorization header added
 }
 }
 \if{html}{\out{<hr>}}

@@ -37,6 +37,8 @@ Lists <- R6Class(
     },
     #' @description
     #' Gets a list List objects from the BrAPI server
+    #' Note the filtering arguments are all optional and can be combined to filter the results
+    #' The value of the filters an be a single value or a vector of values
     #' @param dateCreatedRangeStart Define the beginning for an interval of time and only include Lists that are created within this interval.
     #' @param dateCreatedRangeEnd Define the end for an interval of time and only include Lists that are created within this interval.
     #' @param dateModifiedRangeStart Define the beginning for an interval of time and only include Lists that are modified within this interval.

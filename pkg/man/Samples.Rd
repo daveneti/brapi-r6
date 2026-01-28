@@ -71,6 +71,8 @@ returns a Sample object by ID.
 \if{latex}{\out{\hypertarget{method-Samples-getAll}{}}}
 \subsection{Method \code{getAll()}}{
 Gets a list Sample objects from the BrAPI server
+Note the filtering arguments are all optional and can be combined to filter the results
+The value of the filters an be a single value or a vector of values
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{Samples$getAll(
   commonCropNames = NULL,

@@ -37,6 +37,8 @@ Ontologies <- R6Class(
     },
     #' @description
     #' Gets a list Ontology objects from the BrAPI server
+    #' Note the filtering arguments are all optional and can be combined to filter the results
+    #' The value of the filters an be a single value or a vector of values
     #' @param ontologyDbIds The unique identifier for an ontology definition.
     #' @param ontologyNames The human readable identifier for an ontology definition.
     #' @param page The page number of results to return, starting from 0

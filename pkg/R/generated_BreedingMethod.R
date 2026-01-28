@@ -37,6 +37,8 @@ BreedingMethods <- R6Class(
     },
     #' @description
     #' Gets a list BreedingMethod objects from the BrAPI server
+    #' Note the filtering arguments are all optional and can be combined to filter the results
+    #' The value of the filters an be a single value or a vector of values
     #' @param page The page number of results to return, starting from 0
     #' @param pageSize The maximum number of results to return per page
     #' @return returns a paged and filtered list of BreedingMethod objects.

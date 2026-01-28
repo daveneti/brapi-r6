@@ -71,6 +71,8 @@ returns a Germplasm object by ID.
 \if{latex}{\out{\hypertarget{method-Germplasm-getAll}{}}}
 \subsection{Method \code{getAll()}}{
 Gets a list Germplasm objects from the BrAPI server
+Note the filtering arguments are all optional and can be combined to filter the results
+The value of the filters an be a single value or a vector of values
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{Germplasm$getAll(
   commonCropNames = NULL,

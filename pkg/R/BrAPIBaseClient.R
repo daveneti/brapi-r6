@@ -15,6 +15,11 @@ BaseBrAPIClient <- R6Class(
     #' It is not recommended that this object is created separately from the getBrAPI function
     #' @param server The BraPI server URL to be used
     #' @param format The format of the response, either 'list', 'json', 'string' or 'raw'
+    #'    (default is 'list')
+    #' 'list' will parse the JSON response into an R list, with 3 elements: data (in tibble), pagination and status.
+    #' 'json' will return the JSON response as a character string.
+    #' 'raw' will return the raw response as a raw bytes
+    #' 'string' will return the response as a character string
     #' @param authentication The authentication can either by a Bearer token or an authentication provider function
     #' @param dry_run If TRUE the client will perform a dry run and not actually perform the requests, useful for debugging
     #' @param verbosity The verbosity level to be used. See verbosity in httr2 package for details

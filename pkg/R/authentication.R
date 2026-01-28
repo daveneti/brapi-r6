@@ -47,7 +47,7 @@ basic_authentication <- function(username = guess_username(), password = NULL) {
     password <- getPass::getPass("Enter password: ")
   }
 
-  return(BasicAuth$new(username = username, password = password));
+  return(BasicAuth$new(username = username, password = password))
 }
 
 #' The BasicAuth class provides basic authentication functionality for httr2 requests

@@ -8,6 +8,29 @@ and is a wrapper class around httr2 functionality
 The BrAPIClient class handles the configuration of the BrAPIClient
 connection and is a wrapper class around httr2 functionality
 
+## See also
+
+Other generated: [`AlleleMatrix`](AlleleMatrix.md),
+[`BreedingMethods`](BreedingMethods.md), [`CallSets`](CallSets.md),
+[`Calls`](Calls.md), [`Crosses`](Crosses.md),
+[`CrossingProjects`](CrossingProjects.md), [`Events`](Events.md),
+[`GenomeMaps`](GenomeMaps.md), [`Germplasm`](Germplasm.md),
+[`GermplasmAttributeValues`](GermplasmAttributeValues.md),
+[`GermplasmAttributes`](GermplasmAttributes.md), [`Images`](Images.md),
+[`Lists`](Lists.md), [`Locations`](Locations.md),
+[`MarkerPositions`](MarkerPositions.md), [`Methods`](Methods.md),
+[`ObservationUnits`](ObservationUnits.md),
+[`ObservationVariables`](ObservationVariables.md),
+[`Observations`](Observations.md), [`Ontologies`](Ontologies.md),
+[`PedigreeNodes`](PedigreeNodes.md), [`People`](People.md),
+[`PlannedCrosses`](PlannedCrosses.md), [`Plates`](Plates.md),
+[`Programs`](Programs.md), [`ReferenceSets`](ReferenceSets.md),
+[`References`](References.md), [`Samples`](Samples.md),
+[`Scales`](Scales.md), [`Seasons`](Seasons.md),
+[`SeedLots`](SeedLots.md), [`Studies`](Studies.md),
+[`Traits`](Traits.md), [`Trials`](Trials.md),
+[`VariantSets`](VariantSets.md), [`Variants`](Variants.md)
+
 ## Super class
 
 [`BrAPI.R6::BaseBrAPIClient`](BaseBrAPIClient.md) -\> `BrAPIClient`
@@ -221,10 +244,3 @@ The objects of this class are cloneable with this method.
 - `deep`:
 
   Whether to make a deep clone.
-
-## Examples
-
-``` r
-BrAPIClient$new(token = "www.brapiserver.com")
-#> Error in initialize(...): unused argument (token = "www.brapiserver.com")
-```

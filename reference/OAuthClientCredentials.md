@@ -8,6 +8,11 @@ httr2 requests
 The OAuthClientCredentials class provides OAuth Client Credentials
 functionality for httr2 requests
 
+## See also
+
+Other authentication-classes: [`BaseAuth`](BaseAuth.md),
+[`BasicAuth`](BasicAuth.md), [`OAuthFlow`](OAuthFlow.md)
+
 ## Super class
 
 [`BrAPI.R6::BaseAuth`](BaseAuth.md) -\> `OAuthClientCredentials`

@@ -1,6 +1,6 @@
-# Creates an OAuth provider for BrAPIClient R6 Class object. '
+# Creates an OAuth provider for BrAPIClient R6 Class object.
 
-Creates an OAuth provider for BrAPIClient R6 Class object. '
+Creates an OAuth provider for BrAPIClient R6 Class object.
 
 ## Usage
 
@@ -66,6 +66,12 @@ oauth_flow(
 ## Value
 
 A configured OAuth provider R6 Class object.
+
+## See also
+
+Other authentication:
+[`basic_authentication()`](basic_authentication.md),
+[`client_credentials()`](client_credentials.md)
 
 ## Examples
 

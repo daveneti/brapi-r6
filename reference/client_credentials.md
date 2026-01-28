@@ -1,7 +1,7 @@
-# Creates an OAuth Client Credentials provider for BrAPIClient R6 Class object. '
+# Creates an OAuth Client Credentials provider for BrAPIClient R6 Class object.
 
 Creates an OAuth Client Credentials provider for BrAPIClient R6 Class
-object. '
+object.
 
 ## Usage
 
@@ -45,6 +45,12 @@ client_credentials(
 ## Value
 
 A configured OAuth provider R6 Class object.
+
+## See also
+
+Other authentication:
+[`basic_authentication()`](basic_authentication.md),
+[`oauth_flow()`](oauth_flow.md)
 
 ## Examples
 

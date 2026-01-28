@@ -7,6 +7,12 @@ The BasicAuth class handles Authorization for httr2 requests
 The BasicAuth class provides basic authentication functionality for
 httr2 requests
 
+## See also
+
+Other authentication-classes: [`BaseAuth`](BaseAuth.md),
+[`OAuthClientCredentials`](OAuthClientCredentials.md),
+[`OAuthFlow`](OAuthFlow.md)
+
 ## Super class
 
 [`BrAPI.R6::BaseAuth`](BaseAuth.md) -\> `BasicAuth`

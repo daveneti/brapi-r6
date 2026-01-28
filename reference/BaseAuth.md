@@ -8,6 +8,12 @@ authentication functionality for httr2 requests
 The BaseAuth is a super class for all classes that provide
 authentication functionality for httr2 requests
 
+## See also
+
+Other authentication-classes: [`BasicAuth`](BasicAuth.md),
+[`OAuthClientCredentials`](OAuthClientCredentials.md),
+[`OAuthFlow`](OAuthFlow.md)
+
 ## Methods
 
 ### Public methods

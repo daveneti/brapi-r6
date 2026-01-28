@@ -8,6 +8,29 @@ wrapper class around httr2 functionality for the CrossingProject entity
 The CrossingProjects class handles calling the BraAPI server and is a
 wrapper class around httr2 functionality for the CrossingProject entity
 
+## See also
+
+Other generated: [`AlleleMatrix`](AlleleMatrix.md),
+[`BrAPIClient`](BrAPIClient.md),
+[`BreedingMethods`](BreedingMethods.md), [`CallSets`](CallSets.md),
+[`Calls`](Calls.md), [`Crosses`](Crosses.md), [`Events`](Events.md),
+[`GenomeMaps`](GenomeMaps.md), [`Germplasm`](Germplasm.md),
+[`GermplasmAttributeValues`](GermplasmAttributeValues.md),
+[`GermplasmAttributes`](GermplasmAttributes.md), [`Images`](Images.md),
+[`Lists`](Lists.md), [`Locations`](Locations.md),
+[`MarkerPositions`](MarkerPositions.md), [`Methods`](Methods.md),
+[`ObservationUnits`](ObservationUnits.md),
+[`ObservationVariables`](ObservationVariables.md),
+[`Observations`](Observations.md), [`Ontologies`](Ontologies.md),
+[`PedigreeNodes`](PedigreeNodes.md), [`People`](People.md),
+[`PlannedCrosses`](PlannedCrosses.md), [`Plates`](Plates.md),
+[`Programs`](Programs.md), [`ReferenceSets`](ReferenceSets.md),
+[`References`](References.md), [`Samples`](Samples.md),
+[`Scales`](Scales.md), [`Seasons`](Seasons.md),
+[`SeedLots`](SeedLots.md), [`Studies`](Studies.md),
+[`Traits`](Traits.md), [`Trials`](Trials.md),
+[`VariantSets`](VariantSets.md), [`Variants`](Variants.md)
+
 ## Methods
 
 ### Public methods
@@ -174,10 +197,3 @@ The objects of this class are cloneable with this method.
 - `deep`:
 
   Whether to make a deep clone.
-
-## Examples
-
-``` r
-CrossingProjects$new()
-#> Error in initialize(...): argument "client" is missing, with no default
-```

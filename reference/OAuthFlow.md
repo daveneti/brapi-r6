@@ -6,6 +6,12 @@ The OAuthFlow class handles OAuth for httr2 requests
 
 The OAuthFlow class provides OAuth functionality for httr2 requests
 
+## See also
+
+Other authentication-classes: [`BaseAuth`](BaseAuth.md),
+[`BasicAuth`](BasicAuth.md),
+[`OAuthClientCredentials`](OAuthClientCredentials.md)
+
 ## Super class
 
 [`BrAPI.R6::BaseAuth`](BaseAuth.md) -\> `OAuthFlow`

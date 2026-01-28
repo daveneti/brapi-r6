@@ -6,6 +6,7 @@
 #' @description The BrAPIClient class handles the configuration of the BrAPI connection and
 #' is a wrapper class around httr2 functionality
 #' @family generated
+#' @keywords generated
 #' @import R6
 #' @export
 BrAPIClient <- R6Class(

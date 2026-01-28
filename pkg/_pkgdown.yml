@@ -13,15 +13,18 @@ reference:
   - title: Main functions
     contents:
       - getBrAPI
-  - title: Authentication Functions
+  - title: Authentication
+    subtitle: Functions
+    desc:  Functions to handle authentication with BrAPI servers.
     contents:
-      - matches("authentication")
-  - title: Authentication Classes
+      - has_keyword("authentication")
+  - subtitle: Classes
+    desc:  Classes to handle authentication with BrAPI servers.
     contents:
-      - matches("authentication-classes")
+      - has_keyword("authentication-class")
   - title: Utilities
     contents:
-      - matches("utilities")
+      - has_keyword("utility")
   - title: Generated Entity Classes and BrAPIClient
     contents:
-      - matches("generated")
+      - has_keyword("generated")

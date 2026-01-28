@@ -10,6 +10,14 @@ The BaseAuth is a super class for all classes that provide authentication functi
 \details{
 The BaseAuth is a super class for all classes that provide authentication functionality for httr2 requests
 }
+\seealso{
+Other authentication-classes: 
+\code{\link{BasicAuth}},
+\code{\link{OAuthClientCredentials}},
+\code{\link{OAuthFlow}}
+}
+\concept{authentication-classes}
+\keyword{authentication-class}
 \section{Methods}{
 \subsection{Public methods}{
 \itemize{

@@ -18,5 +18,12 @@ A configured Authorization provider R6 Class object.
 Creates a Authorization provider for BrAPIClient R6 Class object.
 }
 \examples{
-basic_authentication("usernamre", "password")
+basic_authentication("username", "password")
 }
+\seealso{
+Other authentication: 
+\code{\link{client_credentials}()},
+\code{\link{oauth_flow}()}
+}
+\concept{authentication}
+\keyword{authentication}

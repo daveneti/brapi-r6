@@ -12,6 +12,7 @@ is a wrapper class around httr2 functionality. Do not use directly, only use the
 The BaseBrAPIClient class handles the configuration of the BrAPIClient connection and
 is a wrapper class around httr2 functionality
 }
+\keyword{internal}
 \section{Active bindings}{
 \if{html}{\out{<div class="r6-active-bindings">}}
 \describe{

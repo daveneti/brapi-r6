@@ -10,6 +10,14 @@ The BasicAuth class handles Authorization for httr2 requests
 \details{
 The BasicAuth class provides basic authentication functionality for httr2 requests
 }
+\seealso{
+Other authentication-classes: 
+\code{\link{BaseAuth}},
+\code{\link{OAuthClientCredentials}},
+\code{\link{OAuthFlow}}
+}
+\concept{authentication-classes}
+\keyword{authentication-class}
 \section{Super class}{
 \code{\link[BrAPI.R6:BaseAuth]{BrAPI.R6::BaseAuth}} -> \code{BasicAuth}
 }

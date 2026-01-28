@@ -1,6 +1,6 @@
 Package: BrAPI.R6
 Title: An R6 Class Library for BrAPI
-Version: 0.0.0.9000
+Version: 0.1.0
 Authors@R: 
     person("Guy", "Davenport", , "guy@daveneti.com", role = c("aut", "cre"),
         comment = c(ORCID = "0000-0001-8013-4575"))

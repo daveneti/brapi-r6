@@ -74,7 +74,7 @@ In this case, you will need to create an OAuth provider. For example
 auth <- oauth_flow(
   id = "134a6405d4c96797f4d3",
   secret = obfuscated("VoF2g0lvmUMlaLK1LAMdEAo2Jc5oeXB73JSLJFFvwzkcoXhsVG8piP5IeoU0EFUcJV7XtiGa"),
-  token_url = "https://github.com/login/oauth/access_token"
+  token_url = "https://github.com/login/oauth/access_token",
   auth_url = "https://github.com/login/oauth/authorize",
   name = "oauth-test"
 )
@@ -115,7 +115,7 @@ install.packages("devtools")
 
 # Install the BrAPI package from GitHub
 library(devtools)
-install_github("daveneti/brapi-r6")
+install_github("daveneti/brapi-r6/pkg")
 ```
 # Documentation
 

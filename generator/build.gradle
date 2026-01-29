@@ -1,12 +1,12 @@
 apply plugin : "java"
 ext {
   javaMainClass = 'org.brapi.schematools.cli.BrAPICommand'
-  brapiSchemaToolsVersion = '0.46.0-SNAPSHOT'
+  brapiSchemaToolsVersion = '0.49.0'
 }
 
 repositories {
   mavenCentral()
-  maven {url 'https://s01.oss.sonatype.org/content/repositories/snapshots/'}
+  maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
 }
 
 dependencies {
@@ -29,4 +29,8 @@ tasks.register("generateR", JavaExec) {
           '-x',
           '-r',
           '-t']
+}
+
+tasks.register("generateAll") {
+  dependsOn generateR
 }

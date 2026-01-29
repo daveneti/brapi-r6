@@ -7,7 +7,7 @@
 #' 'json' will return the JSON response as a character string.
 #' 'raw' will return the raw response as a raw bytes
 #' 'string' will return the response as a character string
-#' @param authentication The authentication string to be used if the server requires authentication
+#' @param authentication The authentication can either by a Bearer token or an authentication provider function
 #' @param dry_run If TRUE the client will perform a dry run and not actually perform the requests, useful for debugging
 #' @param verbosity Set verbosity level for httr2 requests. 0 = none, 1 = basic, 2 = headers, 3 = body. Aslo controls
 #'   verbosity of messages from this client. Defaults to 0.

@@ -24,8 +24,8 @@ tasks.register("generateR", JavaExec) {
   args = ['generate', specificationDirectory,
           '-l', 'R',
           '-f', filename,
-          '-o', 'generator/r-options.yaml',
-          '-m', 'generator/r-metadata.yaml',
+         // '-o', 'generator/r-options.yaml',
+         // '-m', 'generator/r-metadata.yaml',
           '-x',
           '-r',
           '-t']

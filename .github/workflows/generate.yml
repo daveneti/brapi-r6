@@ -59,6 +59,7 @@ jobs:
         uses: actions/setup-java@v4
         with:
           distribution: 'temurin'
+          java-version: '21'
       - name: Change wrapper permissions
         working-directory: ./main/generator
         run: chmod +x ./gradlew

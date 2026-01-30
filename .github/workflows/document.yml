@@ -6,9 +6,6 @@ on:
       - main
       - brapi-V*
   workflow_dispatch:
-
-permissions: read-all
-
 jobs:
   check:
     runs-on: ubuntu-latest

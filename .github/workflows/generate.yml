@@ -73,8 +73,7 @@ jobs:
       - name: Install dependencies
         working-directory: main/pkg
         run: |
-          Rscript -e "install.packages(c('usethis', 'pkgdown', 'rcmdcheck', 'rversions', 'urlchecker'), repos = 'https://cloud.r-project.org')"
-          Rscript -e "install.packages('devtools', repos = 'https://cloud.r-project.org')"
+          Rscript -e "install.packages(c('usethis', 'pkgdown', 'rcmdcheck', 'rversions', 'urlchecker', 'devtools'), repos = 'https://cloud.r-project.org')"
           Rscript -e "devtools::install_deps(dependencies = TRUE)"
 
       - name: Document R package

@@ -67,6 +67,11 @@ jobs:
         working-directory: ./main/generator
         run: ./gradlew generateR
 
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y build-essential libcurl4-gnutls-dev libxml2-dev libssl-dev
+
       - name: Set up R
         uses: r-lib/actions/setup-r@v2
 

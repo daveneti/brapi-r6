@@ -1,11 +1,32 @@
 name: pkgdown.yaml
 
 on:
+  push:
+    branches:
+      - main
+      - brapi-V*
   workflow_dispatch:
 
 permissions: read-all
 
 jobs:
+  check:
+    runs-on: ubuntu-latest
+    outputs:
+      skip_job: ${{ steps.skip.outputs.skip_job }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Check last commit message
+        id: commit-message
+        run: |
+          echo "COMMIT_MESSAGE=$(git log -1 --pretty=format:'%s')" >> "$GITHUB_ENV"
+      - id: skip
+        name: Skip if automated push
+        if: !contains(env.COMMIT_MESSAGE, 'GitHub Action - Generate R files from JSON Schema')
+        run: |
+          echo "No Generate detected - skipping job"
+          echo "skip_job=true" >> "$GITHUB_OUTPUT"
   pkgdown:
     runs-on: ubuntu-latest
     concurrency:

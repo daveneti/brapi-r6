@@ -73,7 +73,9 @@ jobs:
 
       - name: Install devtools
         working-directory: ./main/pkg
-        run: Rscript -e "install.packages('devtools', repos = 'https://cloud.r-project.org')"
+        run: |
+          Rscript -e "install.packages(c('usethis', 'pkgdown', 'rcmdcheck', 'rversions', 'urlchecker'), repos = 'https://cloud.r-project.org')"
+          Rscript -e "install.packages('devtools', repos = 'https://cloud.r-project.org')"
 
       - name: Run devtools::check
         working-directory: ./main/pkg

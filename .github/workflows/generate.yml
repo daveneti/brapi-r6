@@ -76,10 +76,25 @@ jobs:
         with:
           packages: |
             any::devtools 
+            any::pkgdown 
+
+      - name: Run devtools::document
+        working-directory: ./main/pkg
+        run: Rscript -e "devtools::document()"
+
+      - name: Build pkgdown site
+        working-directory: ./main/pkg
+        run: Rscript -e "pkgdown::build_site()"
 
       - name: Run devtools::check
         working-directory: ./main/pkg
         run: Rscript -e "devtools::check()"
+
+      - name: Deploy to gh-pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./main/pkg/docs
 
       - name: Commit and Push changes
         uses: stefanzweifel/git-auto-commit-action@v5

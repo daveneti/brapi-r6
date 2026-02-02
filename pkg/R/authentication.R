@@ -40,7 +40,9 @@ BaseAuth <- R6Class(
 #' @param password The password to be used for Authorization. If NULL it will prompt for the password.
 #' @return A configured Authorization provider R6 Class object.
 #' @examples
+#' \dontrun{
 #' basic_authentication("username", "password")
+#' }
 #' @import httr2
 #' @import getPass
 #' @export
@@ -104,7 +106,9 @@ BasicAuth <- R6Class(
 #' @param redirect_uri The redirect URI to be used for OAuth Authorization.
 #' @return A configured OAuth provider R6 Class object.
 #' @examples
+#' \dontrun{
 #' oauth_flow("client_id", "client_secret", "https://example.com/token", "https://example.com/auth")
+#' }
 #' @import httr2
 #' @import R6
 #' @export
@@ -235,7 +239,9 @@ OAuthFlow <- R6Class(
 #' @param token_params Additional token parameters to be used for OAuth Authorization.
 #' @return A configured OAuth provider R6 Class object.
 #' @examples
+#' \dontrun{
 #' oauth_flow("client_id", "client_secret", "https://example.com/token")
+#' }
 #' @import httr2
 #' @import R6
 #' @export

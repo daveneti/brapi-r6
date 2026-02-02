@@ -333,7 +333,9 @@ OAuthClientCredentials <- R6Class(
 #' @family utilities
 #' @keywords utility
 #' @examples
+#' \dontrun{
 #' guess_username()
+#' ' }
 guess_username <- function() {
   # rstudio server
   username <- unname(Sys.getenv("LOGNAME"))

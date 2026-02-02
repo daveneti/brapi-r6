@@ -34,7 +34,7 @@ In the case of setting it returns the BrAPIClient to allow for chaining.}
 
 \item{\code{multi}}{Controls what happens when a query argument value is a vector. If null it passes the
 query argument value as a concatenated string. Eg. c('example1', 'example1') will
-be converted to \link{'example1', 'example1'}
+be converted to ['example1', 'example1']
 see .multi in https://httr2.r-lib.org/reference/req_url.html'
 In the case of setting it returns the BrAPIClient to allow for chaining.}
 }

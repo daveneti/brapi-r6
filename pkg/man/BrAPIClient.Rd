@@ -60,112 +60,112 @@ Other generated:
 \if{html}{\out{<div class="r6-active-bindings">}}
 \describe{
 \item{\code{alleleMatrix}}{Get the AlleleMatrix R6 class object which can be used to call the BrAPI server for
-[${entityNames\link{iterStat.index}}]] entities}
+AlleleMatrix entities}
 
 \item{\code{breedingMethods}}{Get the BreedingMethods R6 class object which can be used to call the BrAPI server for
-[${entityNames\link{iterStat.index}}]] entities}
+BreedingMethod entities}
 
 \item{\code{calls}}{Get the Calls R6 class object which can be used to call the BrAPI server for
-[${entityNames\link{iterStat.index}}]] entities}
+Call entities}
 
 \item{\code{callSets}}{Get the CallSets R6 class object which can be used to call the BrAPI server for
-[${entityNames\link{iterStat.index}}]] entities}
+CallSet entities}
 
 \item{\code{crosses}}{Get the Crosses R6 class object which can be used to call the BrAPI server for
-[${entityNames\link{iterStat.index}}]] entities}
+Cross entities}
 
 \item{\code{crossingProjects}}{Get the CrossingProjects R6 class object which can be used to call the BrAPI server for
-[${entityNames\link{iterStat.index}}]] entities}
+CrossingProject entities}
 
 \item{\code{events}}{Get the Events R6 class object which can be used to call the BrAPI server for
-[${entityNames\link{iterStat.index}}]] entities}
+Event entities}
 
 \item{\code{genomeMaps}}{Get the GenomeMaps R6 class object which can be used to call the BrAPI server for
-[${entityNames\link{iterStat.index}}]] entities}
+GenomeMap entities}
 
 \item{\code{germplasm}}{Get the Germplasm R6 class object which can be used to call the BrAPI server for
-[${entityNames\link{iterStat.index}}]] entities}
+Germplasm entities}
 
 \item{\code{germplasmAttributes}}{Get the GermplasmAttributes R6 class object which can be used to call the BrAPI server for
-[${entityNames\link{iterStat.index}}]] entities}
+GermplasmAttribute entities}
 
 \item{\code{germplasmAttributeValues}}{Get the GermplasmAttributeValues R6 class object which can be used to call the BrAPI server for
-[${entityNames\link{iterStat.index}}]] entities}
+GermplasmAttributeValue entities}
 
 \item{\code{images}}{Get the Images R6 class object which can be used to call the BrAPI server for
-[${entityNames\link{iterStat.index}}]] entities}
+Image entities}
 
 \item{\code{lists}}{Get the Lists R6 class object which can be used to call the BrAPI server for
-[${entityNames\link{iterStat.index}}]] entities}
+List entities}
 
 \item{\code{locations}}{Get the Locations R6 class object which can be used to call the BrAPI server for
-[${entityNames\link{iterStat.index}}]] entities}
+Location entities}
 
 \item{\code{markerPositions}}{Get the MarkerPositions R6 class object which can be used to call the BrAPI server for
-[${entityNames\link{iterStat.index}}]] entities}
+MarkerPosition entities}
 
 \item{\code{methods}}{Get the Methods R6 class object which can be used to call the BrAPI server for
-[${entityNames\link{iterStat.index}}]] entities}
+Method entities}
 
 \item{\code{observations}}{Get the Observations R6 class object which can be used to call the BrAPI server for
-[${entityNames\link{iterStat.index}}]] entities}
+Observation entities}
 
 \item{\code{observationUnits}}{Get the ObservationUnits R6 class object which can be used to call the BrAPI server for
-[${entityNames\link{iterStat.index}}]] entities}
+ObservationUnit entities}
 
 \item{\code{observationVariables}}{Get the ObservationVariables R6 class object which can be used to call the BrAPI server for
-[${entityNames\link{iterStat.index}}]] entities}
+ObservationVariable entities}
 
 \item{\code{ontologies}}{Get the Ontologies R6 class object which can be used to call the BrAPI server for
-[${entityNames\link{iterStat.index}}]] entities}
+Ontology entities}
 
 \item{\code{pedigreeNodes}}{Get the PedigreeNodes R6 class object which can be used to call the BrAPI server for
-[${entityNames\link{iterStat.index}}]] entities}
+PedigreeNode entities}
 
 \item{\code{people}}{Get the People R6 class object which can be used to call the BrAPI server for
-[${entityNames\link{iterStat.index}}]] entities}
+Person entities}
 
 \item{\code{plannedCrosses}}{Get the PlannedCrosses R6 class object which can be used to call the BrAPI server for
-[${entityNames\link{iterStat.index}}]] entities}
+PlannedCross entities}
 
 \item{\code{plates}}{Get the Plates R6 class object which can be used to call the BrAPI server for
-[${entityNames\link{iterStat.index}}]] entities}
+Plate entities}
 
 \item{\code{programs}}{Get the Programs R6 class object which can be used to call the BrAPI server for
-[${entityNames\link{iterStat.index}}]] entities}
+Program entities}
 
 \item{\code{references}}{Get the References R6 class object which can be used to call the BrAPI server for
-[${entityNames\link{iterStat.index}}]] entities}
+Reference entities}
 
 \item{\code{referenceSets}}{Get the ReferenceSets R6 class object which can be used to call the BrAPI server for
-[${entityNames\link{iterStat.index}}]] entities}
+ReferenceSet entities}
 
 \item{\code{samples}}{Get the Samples R6 class object which can be used to call the BrAPI server for
-[${entityNames\link{iterStat.index}}]] entities}
+Sample entities}
 
 \item{\code{scales}}{Get the Scales R6 class object which can be used to call the BrAPI server for
-[${entityNames\link{iterStat.index}}]] entities}
+Scale entities}
 
 \item{\code{seasons}}{Get the Seasons R6 class object which can be used to call the BrAPI server for
-[${entityNames\link{iterStat.index}}]] entities}
+Season entities}
 
 \item{\code{seedLots}}{Get the SeedLots R6 class object which can be used to call the BrAPI server for
-[${entityNames\link{iterStat.index}}]] entities}
+SeedLot entities}
 
 \item{\code{studies}}{Get the Studies R6 class object which can be used to call the BrAPI server for
-[${entityNames\link{iterStat.index}}]] entities}
+Study entities}
 
 \item{\code{traits}}{Get the Traits R6 class object which can be used to call the BrAPI server for
-[${entityNames\link{iterStat.index}}]] entities}
+Trait entities}
 
 \item{\code{trials}}{Get the Trials R6 class object which can be used to call the BrAPI server for
-[${entityNames\link{iterStat.index}}]] entities}
+Trial entities}
 
 \item{\code{variants}}{Get the Variants R6 class object which can be used to call the BrAPI server for
-[${entityNames\link{iterStat.index}}]] entities}
+Variant entities}
 
 \item{\code{variantSets}}{Get the VariantSets R6 class object which can be used to call the BrAPI server for
-[${entityNames\link{iterStat.index}}]] entities}
+VariantSet entities}
 }
 \if{html}{\out{</div>}}
 }

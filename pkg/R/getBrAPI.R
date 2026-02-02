@@ -13,7 +13,9 @@
 #'   verbosity of messages from this client. Defaults to 0.
 #' @return A configured BrAPIClient R6 Class object.
 #' @examples
-#' getBrAPI("www.brapiserver.com")
+#' \dontrun{
+#' getBrAPI("http://www.brapiserver.com")
+#' }
 #' @import R6
 #' @import httr2
 #' @importFrom glue glue

@@ -11,3 +11,11 @@ guess_username()
 ## Value
 
 The guessed username
+
+## Examples
+
+``` r
+if (FALSE) { # \dontrun{
+guess_username()
+} # }
+```

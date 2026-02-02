@@ -101,4 +101,4 @@ jobs:
         with:
           repository: main
           commit_message: GitHub Action - Generate R files from JSON Schema
-          file_pattern: **/*
+          file_pattern: '**/*'

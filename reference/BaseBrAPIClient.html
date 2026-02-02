@@ -77,7 +77,7 @@ In the case of setting it returns the BrAPIClient to allow for chaining.</p></dd
 <dt><code>multi</code></dt>
 <dd><p>Controls what happens when a query argument value is a vector. If null it passes the
 query argument value as a concatenated string. Eg. c('example1', 'example1') will
-be converted to 'example1', 'example1'
+be converted to ['example1', 'example1']
 see .multi in https://httr2.r-lib.org/reference/req_url.html'
 In the case of setting it returns the BrAPIClient to allow for chaining.</p></dd>
 
@@ -115,7 +115,12 @@ It is not recommended that this object is created separately from the getBrAPI f
 
 
 <dt><code>format</code></dt>
-<dd><p>The format of the response, either 'list', 'json', 'string' or 'raw'</p></dd>
+<dd><p>The format of the response, either 'list', 'json', 'string' or 'raw'
+(default is 'list')
+'list' will parse the JSON response into an R list, with 3 elements: data (in tibble), pagination and status.
+'json' will return the JSON response as a character string.
+'raw' will return the raw response as a raw bytes
+'string' will return the response as a character string</p></dd>
 
 
 <dt><code>authentication</code></dt>

@@ -153,7 +153,7 @@ values
 - `accessionNumbers`:
 
   A collection of unique identifiers for materials or germplasm within a
-  genebank MCPD (v2.
+  genebank MCPD (v2.1) (ACCENUMB) 2.
 
 - `collections`:
 
@@ -312,7 +312,7 @@ return the paged results or a search result ID for later retrieval
 - `accessionNumbers`:
 
   A collection of unique identifiers for materials or germplasm within a
-  genebank MCPD (v2.
+  genebank MCPD (v2.1) (ACCENUMB) 2.
 
 - `collections`:
 

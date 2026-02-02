@@ -22,12 +22,17 @@ getBrAPI(
 
 - format:
 
-  The format of the response, either 'raw', 'json' or 'string'
+  The format of the response, either 'list', 'json', 'string' or 'raw'
+  (default is 'list') 'list' will parse the JSON response into an R
+  list, with 3 elements: data (in tibble), pagination and status. 'json'
+  will return the JSON response as a character string. 'raw' will return
+  the raw response as a raw bytes 'string' will return the response as a
+  character string
 
 - authentication:
 
-  The authentication string to be used if the server requires
-  authentication
+  The authentication can either by a Bearer token or an authentication
+  provider function
 
 - dry_run:
 
@@ -47,6 +52,7 @@ A configured BrAPIClient R6 Class object.
 ## Examples
 
 ``` r
-getBrAPI("www.brapiserver.com")
-#> Error in curl::curl_parse_url(req$url, decode = FALSE): Failed to parse URL: Bad scheme
+if (FALSE) { # \dontrun{
+getBrAPI("http://www.brapiserver.com")
+} # }
 ```

@@ -159,7 +159,8 @@ value of the filters an be a single value or a vector of values
 
 - `countryCodes`:
 
-  ISO_3166-1_alpha-3(https://en.
+  [ISO_3166-1_alpha-3](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3)
+  spec
 
 - `countryNames`:
 
@@ -177,7 +178,8 @@ value of the filters an be a single value or a vector of values
 
 - `locationTypes`:
 
-  The type of location this represents (ex.
+  The type of location this represents (ex. Breeding Location, Storage
+  Location, etc)
 
 - `parentLocationDbIds`:
 
@@ -270,7 +272,8 @@ the paged results or a search result ID for later retrieval
 
 - `countryCodes`:
 
-  ISO_3166-1_alpha-3(https://en.
+  [ISO_3166-1_alpha-3](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3)
+  spec
 
 - `countryNames`:
 
@@ -288,7 +291,8 @@ the paged results or a search result ID for later retrieval
 
 - `locationTypes`:
 
-  The type of location this represents (ex.
+  The type of location this represents (ex. Breeding Location, Storage
+  Location, etc)
 
 - `parentLocationDbIds`:
 

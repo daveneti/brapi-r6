@@ -11,10 +11,3 @@ guess_username()
 ## Value
 
 The guessed username
-
-## Examples
-
-``` r
-guess_username()
-#> Error in guess_username(): could not find function "guess_username"
-```

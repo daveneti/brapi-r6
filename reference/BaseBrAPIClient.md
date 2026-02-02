@@ -47,9 +47,10 @@ connection and is a wrapper class around httr2 functionality
 
   Controls what happens when a query argument value is a vector. If null
   it passes the query argument value as a concatenated string. Eg.
-  c('example1', 'example1') will be converted to 'example1', 'example1'
-  see .multi in https://httr2.r-lib.org/reference/req_url.html' In the
-  case of setting it returns the BrAPIClient to allow for chaining.
+  c('example1', 'example1') will be converted to \['example1',
+  'example1'\] see .multi in
+  https://httr2.r-lib.org/reference/req_url.html' In the case of setting
+  it returns the BrAPIClient to allow for chaining.
 
 ## Methods
 
@@ -91,6 +92,11 @@ function
 - `format`:
 
   The format of the response, either 'list', 'json', 'string' or 'raw'
+  (default is 'list') 'list' will parse the JSON response into an R
+  list, with 3 elements: data (in tibble), pagination and status. 'json'
+  will return the JSON response as a character string. 'raw' will return
+  the raw response as a raw bytes 'string' will return the response as a
+  character string
 
 - `authentication`:
 

@@ -40,182 +40,182 @@ Other generated: [`AlleleMatrix`](AlleleMatrix.md),
 - `alleleMatrix`:
 
   Get the AlleleMatrix R6 class object which can be used to call the
-  BrAPI server for \[\$entityNamesiterStat.index\]\] entities
+  BrAPI server for AlleleMatrix entities
 
 - `breedingMethods`:
 
   Get the BreedingMethods R6 class object which can be used to call the
-  BrAPI server for \[\$entityNamesiterStat.index\]\] entities
+  BrAPI server for BreedingMethod entities
 
 - `calls`:
 
   Get the Calls R6 class object which can be used to call the BrAPI
-  server for \[\$entityNamesiterStat.index\]\] entities
+  server for Call entities
 
 - `callSets`:
 
   Get the CallSets R6 class object which can be used to call the BrAPI
-  server for \[\$entityNamesiterStat.index\]\] entities
+  server for CallSet entities
 
 - `crosses`:
 
   Get the Crosses R6 class object which can be used to call the BrAPI
-  server for \[\$entityNamesiterStat.index\]\] entities
+  server for Cross entities
 
 - `crossingProjects`:
 
   Get the CrossingProjects R6 class object which can be used to call the
-  BrAPI server for \[\$entityNamesiterStat.index\]\] entities
+  BrAPI server for CrossingProject entities
 
 - `events`:
 
   Get the Events R6 class object which can be used to call the BrAPI
-  server for \[\$entityNamesiterStat.index\]\] entities
+  server for Event entities
 
 - `genomeMaps`:
 
   Get the GenomeMaps R6 class object which can be used to call the BrAPI
-  server for \[\$entityNamesiterStat.index\]\] entities
+  server for GenomeMap entities
 
 - `germplasm`:
 
   Get the Germplasm R6 class object which can be used to call the BrAPI
-  server for \[\$entityNamesiterStat.index\]\] entities
+  server for Germplasm entities
 
 - `germplasmAttributes`:
 
   Get the GermplasmAttributes R6 class object which can be used to call
-  the BrAPI server for \[\$entityNamesiterStat.index\]\] entities
+  the BrAPI server for GermplasmAttribute entities
 
 - `germplasmAttributeValues`:
 
   Get the GermplasmAttributeValues R6 class object which can be used to
-  call the BrAPI server for \[\$entityNamesiterStat.index\]\] entities
+  call the BrAPI server for GermplasmAttributeValue entities
 
 - `images`:
 
   Get the Images R6 class object which can be used to call the BrAPI
-  server for \[\$entityNamesiterStat.index\]\] entities
+  server for Image entities
 
 - `lists`:
 
   Get the Lists R6 class object which can be used to call the BrAPI
-  server for \[\$entityNamesiterStat.index\]\] entities
+  server for List entities
 
 - `locations`:
 
   Get the Locations R6 class object which can be used to call the BrAPI
-  server for \[\$entityNamesiterStat.index\]\] entities
+  server for Location entities
 
 - `markerPositions`:
 
   Get the MarkerPositions R6 class object which can be used to call the
-  BrAPI server for \[\$entityNamesiterStat.index\]\] entities
+  BrAPI server for MarkerPosition entities
 
 - `methods`:
 
   Get the Methods R6 class object which can be used to call the BrAPI
-  server for \[\$entityNamesiterStat.index\]\] entities
+  server for Method entities
 
 - `observations`:
 
   Get the Observations R6 class object which can be used to call the
-  BrAPI server for \[\$entityNamesiterStat.index\]\] entities
+  BrAPI server for Observation entities
 
 - `observationUnits`:
 
   Get the ObservationUnits R6 class object which can be used to call the
-  BrAPI server for \[\$entityNamesiterStat.index\]\] entities
+  BrAPI server for ObservationUnit entities
 
 - `observationVariables`:
 
   Get the ObservationVariables R6 class object which can be used to call
-  the BrAPI server for \[\$entityNamesiterStat.index\]\] entities
+  the BrAPI server for ObservationVariable entities
 
 - `ontologies`:
 
   Get the Ontologies R6 class object which can be used to call the BrAPI
-  server for \[\$entityNamesiterStat.index\]\] entities
+  server for Ontology entities
 
 - `pedigreeNodes`:
 
   Get the PedigreeNodes R6 class object which can be used to call the
-  BrAPI server for \[\$entityNamesiterStat.index\]\] entities
+  BrAPI server for PedigreeNode entities
 
 - `people`:
 
   Get the People R6 class object which can be used to call the BrAPI
-  server for \[\$entityNamesiterStat.index\]\] entities
+  server for Person entities
 
 - `plannedCrosses`:
 
   Get the PlannedCrosses R6 class object which can be used to call the
-  BrAPI server for \[\$entityNamesiterStat.index\]\] entities
+  BrAPI server for PlannedCross entities
 
 - `plates`:
 
   Get the Plates R6 class object which can be used to call the BrAPI
-  server for \[\$entityNamesiterStat.index\]\] entities
+  server for Plate entities
 
 - `programs`:
 
   Get the Programs R6 class object which can be used to call the BrAPI
-  server for \[\$entityNamesiterStat.index\]\] entities
+  server for Program entities
 
 - `references`:
 
   Get the References R6 class object which can be used to call the BrAPI
-  server for \[\$entityNamesiterStat.index\]\] entities
+  server for Reference entities
 
 - `referenceSets`:
 
   Get the ReferenceSets R6 class object which can be used to call the
-  BrAPI server for \[\$entityNamesiterStat.index\]\] entities
+  BrAPI server for ReferenceSet entities
 
 - `samples`:
 
   Get the Samples R6 class object which can be used to call the BrAPI
-  server for \[\$entityNamesiterStat.index\]\] entities
+  server for Sample entities
 
 - `scales`:
 
   Get the Scales R6 class object which can be used to call the BrAPI
-  server for \[\$entityNamesiterStat.index\]\] entities
+  server for Scale entities
 
 - `seasons`:
 
   Get the Seasons R6 class object which can be used to call the BrAPI
-  server for \[\$entityNamesiterStat.index\]\] entities
+  server for Season entities
 
 - `seedLots`:
 
   Get the SeedLots R6 class object which can be used to call the BrAPI
-  server for \[\$entityNamesiterStat.index\]\] entities
+  server for SeedLot entities
 
 - `studies`:
 
   Get the Studies R6 class object which can be used to call the BrAPI
-  server for \[\$entityNamesiterStat.index\]\] entities
+  server for Study entities
 
 - `traits`:
 
   Get the Traits R6 class object which can be used to call the BrAPI
-  server for \[\$entityNamesiterStat.index\]\] entities
+  server for Trait entities
 
 - `trials`:
 
   Get the Trials R6 class object which can be used to call the BrAPI
-  server for \[\$entityNamesiterStat.index\]\] entities
+  server for Trial entities
 
 - `variants`:
 
   Get the Variants R6 class object which can be used to call the BrAPI
-  server for \[\$entityNamesiterStat.index\]\] entities
+  server for Variant entities
 
 - `variantSets`:
 
   Get the VariantSets R6 class object which can be used to call the
-  BrAPI server for \[\$entityNamesiterStat.index\]\] entities
+  BrAPI server for VariantSet entities
 
 ## Methods
 

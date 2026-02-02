@@ -32,15 +32,7 @@ Other authentication: [`client_credentials()`](client_credentials.md),
 ## Examples
 
 ``` r
+if (FALSE) { # \dontrun{
 basic_authentication("username", "password")
-#> <BasicAuth>
-#>   Inherits from: <BaseAuth>
-#>   Public:
-#>     authentication: function (req) 
-#>     clone: function (deep = FALSE) 
-#>     initialize: function (username = NULL, password = NULL) 
-#>     token: function () 
-#>   Private:
-#>     .password: password
-#>     .username: username
+} # }
 ```

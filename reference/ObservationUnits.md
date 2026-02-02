@@ -213,7 +213,7 @@ values
 - `seasonDbIds`:
 
   The year or Phenotyping campaign of a multi-annual study (trees,
-  grape, .
+  grape, ...)
 
 - `page`:
 
@@ -349,7 +349,7 @@ return the paged results or a search result ID for later retrieval
 - `seasonDbIds`:
 
   The year or Phenotyping campaign of a multi-annual study (trees,
-  grape, . using the searchResult function
+  grape, ...) using the searchResult function
 
 - `page`:
 

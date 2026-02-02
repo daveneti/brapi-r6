@@ -76,20 +76,7 @@ Other authentication:
 ## Examples
 
 ``` r
+if (FALSE) { # \dontrun{
 oauth_flow("client_id", "client_secret", "https://example.com/token", "https://example.com/auth")
-#> <OAuthFlow>
-#>   Inherits from: <BaseAuth>
-#>   Public:
-#>     authentication: function (req) 
-#>     clone: function (deep = FALSE) 
-#>     initialize: function (id, secret = NULL, token_url, name = "OAuthFlow", auth_url, 
-#>     token: function (req) 
-#>   Private:
-#>     .auth_params: NULL
-#>     .auth_url: NULL
-#>     .client: httr2_oauth_client
-#>     .pkce: TRUE
-#>     .redirect_uri: NULL
-#>     .scope: NULL
-#>     .token_params: NULL
+} # }
 ```
